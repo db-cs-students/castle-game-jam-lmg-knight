@@ -27,8 +27,9 @@ controller.moveSprite(Knight)
 scene.cameraFollowSprite(Knight)
 Knight.ay = 250
 let statusbar = statusbars.create(22, 4, 0)
-statusbar.attachToSprite(Knight)
 statusbar.setLabel("HP")
+statusbars.getStatusBarAttachedTo(StatusBarKind.Health, Knight)
+statusbar.attachToSprite(Knight)
 // Make the level
 scene.setTileMap(img`
     bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
@@ -58,8 +59,8 @@ scene.setTileMap(img`
     b...................bb.........b...............b................b..b...........b......e....b.......b
     b..5......2........bbb.........b......bbbbbbbb.b....5..........5b..b...bbbb....b..bbbbbbbbbb.......b
     b.......bbbbbbbbbbbbbb...bbbbbbb...bbbb6.......b....bbbbbbbbbbbbb..b...........b...................b
-    b......b.............bb........................bb............5.....b....5......bb..................b
-    b....bbb.............bbb.......................bbb..5..............b.2.......2.bbb.................b
+    b......b.............bb........................bb............5..........5......bb..................b
+    b....bbb.............bbb.......................bbb..5................2.......2.bbb.................b
     bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 `)
 scene.setTile(11, img`

@@ -4,7 +4,9 @@
     "dependencies": {
         "device": "*",
         "color-coded-tilemap": "*",
-        "pxt-status-bar": "github:jwunderl/pxt-status-bar#v0.3.1"
+        "pxt-status-bar": "github:jwunderl/pxt-status-bar#v0.3.1",
+        "arcade-minimap": "github:microsoft/arcade-minimap#v0.6.1",
+        "darts": "*"
     },
     "files": [
         "main.ts",

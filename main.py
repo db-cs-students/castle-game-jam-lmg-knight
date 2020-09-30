@@ -26,8 +26,9 @@ controller.move_sprite(Knight)
 scene.camera_follow_sprite(Knight)
 Knight.ay = 250
 statusbar = statusbars.create(22, 4, 0)
-statusbar.attach_to_sprite(Knight)
 statusbar.set_label("HP")
+statusbars.get_status_bar_attached_to(StatusBarKind.health, Knight)
+statusbar.attach_to_sprite(Knight)
 
 #Make the level
 scene.set_tile_map(img("""
@@ -58,8 +59,8 @@ scene.set_tile_map(img("""
     b...................bb.........b...............b................b..b...........b......e....b.......b
     b..5......2........bbb.........b......bbbbbbbb.b....5..........5b..b...bbbb....b..bbbbbbbbbb.......b
     b.......bbbbbbbbbbbbbb...bbbbbbb...bbbb6.......b....bbbbbbbbbbbbb..b...........b...................b
-    b......b.............bb........................bb............5.....b....5......bb..................b
-    b....bbb.............bbb.......................bbb..5..............b.2.......2.bbb.................b
+    b......b.............bb........................bb............5..........5......bb..................b
+    b....bbb.............bbb.......................bbb..5................2.......2.bbb.................b
     bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 """))
 scene.set_tile(11, img("""
