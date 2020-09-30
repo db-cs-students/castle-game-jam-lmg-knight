@@ -3,12 +3,14 @@
     "description": "",
     "dependencies": {
         "device": "*",
-        "color-coded-tilemap": "*"
+        "color-coded-tilemap": "*",
+        "pxt-status-bar": "github:jwunderl/pxt-status-bar#v0.3.1"
     },
     "files": [
         "main.ts",
         "README.md",
-        "main.py"
+        "main.py",
+        null
     ],
     "testFiles": [
         "test.ts"
