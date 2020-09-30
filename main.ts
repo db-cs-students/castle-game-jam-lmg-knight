@@ -25,11 +25,10 @@ let Knight = sprites.create(img`
 `)
 controller.moveSprite(Knight)
 scene.cameraFollowSprite(Knight)
-controller.up.onEvent(ControllerButtonEvent.Pressed, function on_event_pressed() {
-    Knight.ay = 150
-})
+Knight.ay = 250
 let statusbar = statusbars.create(22, 4, 0)
 statusbar.attachToSprite(Knight)
+statusbar.setLabel("HP")
 // Make the level
 scene.setTileMap(img`
     bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
@@ -42,7 +41,7 @@ scene.setTileMap(img`
     b.......................5.........................................bbbbbbbbbbbbbbbbbbbbb............b
     b...e.........................bbbbbbbbbb.......5.............5...bb................................b
     bbbbbbbbb.......5...........bb..................................bb.................................b
-    b....5...............bbbbbbb........................6.e.6......bb..................................b
+    b....5...............bbbbbbb..........................e........bb..................................b
     b...................b......................bbbbbbbbbbbbbbbbbbbbb...................................b
     b.............bbbbbb..................................................................88...........b
     b............b..........................................................5.............88.2.........b
@@ -58,7 +57,7 @@ scene.setTileMap(img`
     b..........bbbbbbbb..b...5...5.b.........5.....bbbbbbbbbbbbbbbbbb..b...........b...........b.......b
     b...................bb.........b...............b................b..b...........b......e....b.......b
     b..5......2........bbb.........b......bbbbbbbb.b....5..........5b..b...bbbb....b..bbbbbbbbbb.......b
-    b.......bbbbbbbbbbbbbb......bbbb...bbbb6.......b....bbbbbbbbbbbbb..b...........b...................b
+    b.......bbbbbbbbbbbbbb...bbbbbbb...bbbb6.......b....bbbbbbbbbbbbb..b...........b...................b
     b......b.............bb........................bb............5.....b....5......bb..................b
     b....bbb.............bbb.......................bbb..5..............b.2.......2.bbb.................b
     bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
@@ -136,6 +135,24 @@ scene.setTile(14, img`
     . . . . e e e e e e e e e . . .
 `)
 scene.setTile(8, img`
+    a a a a a a a a a a a a a a a a
+    a a 8 8 8 8 8 8 8 8 8 a 8 8 8 a
+    a a a 8 8 8 8 8 8 8 a a 8 8 8 a
+    a 8 a a 8 8 8 8 8 a a 8 8 8 a a
+    a 8 8 a a 8 8 8 a a 8 8 8 a a a
+    a 8 8 8 a a 8 8 a 8 8 8 a a 8 a
+    a 8 8 8 8 a a 8 a 8 a a a 8 8 a
+    a 8 8 8 8 8 8 a a a 8 8 8 8 8 a
+    a 8 8 8 8 8 8 a a 8 8 8 8 8 8 a
+    a a 8 8 8 8 a 8 8 a a 8 8 8 8 a
+    a a a 8 8 a a 8 8 8 a 8 8 8 8 a
+    a 8 a a a a 8 8 8 8 a a 8 8 8 a
+    a 8 8 8 8 8 8 8 8 8 8 a 8 8 8 a
+    a 8 8 8 8 8 8 8 8 8 a a 8 8 8 a
+    a 8 8 8 8 8 8 8 8 a a 8 8 8 8 a
+    a a a a a a a a a a a a a a a a
+`)
+scene.setTile(2, img`
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
@@ -149,7 +166,7 @@ scene.setTile(8, img`
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
+    . . . . 1 . . . 1 . . . 1 . . .
+    . . . 1 2 1 . 1 2 1 . 1 2 1 . .
+    . . 1 2 2 2 1 2 2 2 1 2 2 2 1 .
 `)
