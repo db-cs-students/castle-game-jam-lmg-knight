@@ -6,23 +6,23 @@ Description : You're a Knight going on a crusade to kill the dragon but you have
 #Make the player, camera, and controls
 Knight = sprites.create(img("""
     . . . . . 1 1 1 1 1 . . . . . .
+    . . . . 1 1 1 1 1 1 1 . . . . .
     . . . . 1 . . . . . 1 . . . . .
-    . . . . 1 . . . . . 1 . . . . .
-    . . . . 1 . . . . . 1 . . . . .
-    . . . . 1 . . . . . 1 . . . . .
-    . . . . 1 . . . . . 1 . . . . .
+    . . . . 1 1 1 1 1 1 1 . . . . .
+    . . . . 1 . 1 . 1 . 1 . . . . .
+    . . . . 1 1 . 1 . 1 1 . . . . .
     . . . . . 1 1 1 1 1 . . . . . .
     . . . . . . . . . . . . . . . .
     . . . . 1 1 1 1 1 1 1 . . . . .
-    . . . . 1 . . . . . 1 . . . . .
-    . . . . 1 . . . . . 1 . . . . .
-    . . . . 1 . . . . . 1 . . . . .
-    . . . . 1 . . . . . 1 . . . . .
+    . . . . 1 1 1 1 1 1 1 . . . . .
+    . . . . 1 1 1 1 1 1 1 . . . . .
+    . . . . 1 1 1 1 1 1 1 . . . . .
+    . . 1 . 1 1 1 1 1 1 1 . 1 . . .
     . . . . 1 1 1 1 1 1 1 . . . . .
     . . . . . . . . . . . . . . . .
     . . . . . 1 . . . 1 . . . . . .
 """))
-controller.move_sprite(Knight, 50, 0)
+controller.move_sprite(Knight, 75, 0)
 scene.camera_follow_sprite(Knight)
 Knight.ay = 275
 statusbar = statusbars.create(22, 4, 0)
@@ -67,22 +67,22 @@ scene.set_tile_map(img("""
     bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 """))
 scene.set_tile(11, img("""
-    b b b b b b b b b b b b b b b b
-    b b b b b b b b b b b b b b b b
-    b b b b b b b b b b b b b b b b
-    b b b b b b b b b b b b b b b b
-    b b b b b b b b b b b b b b b b
-    b b b b b b b b b b b b b b b b
-    b b b b b b b b b b b b b b b b
-    b b b b b b b b b b b b b b b b
-    b b b b b b b b b b b b b b b b
-    b b b b b b b b b b b b b b b b
-    b b b b b b b b b b b b b b b b
-    b b b b b b b b b b b b b b b b
-    b b b b b b b b b b b b b b b b
-    b b b b b b b b b b b b b b b b
-    b b b b b b b b b b b b b b b b
-    b b b b b b b b b b b b b b b b
+    f b b f b b b f b b f b b f b b
+    f b b f b b b f b b f b b f b b
+    f f f f f f f f f f f f f f f f
+    b f b b f b f b b b b f b b f b
+    b f b b f b f b b b b f b b f b
+    b f b b f b f b b b b f b b f b
+    b f b b f b f b b b b f b b f b
+    f f f f f f f f f f f f f f f f
+    f b b f b b b f b b f b b f b b
+    f b b f b b b f b b f b b f b b
+    f b b f b b b f b b f b b f b b
+    f b b f b b b f b b f b b f b b
+    f f f f f f f f f f f f f f f f
+    b f b b f b f b b b b f b b f b
+    b f b b f b f b b b b f b b f b
+    b f b b f b f b b b b f b b f b
 """),True)
 scene.set_tile(6, img("""
     . . . . . . . . . . . . . . . .

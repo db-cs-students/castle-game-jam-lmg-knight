@@ -7,23 +7,23 @@ Description : You're a Knight going on a crusade to kill the dragon but you have
 // Make the player, camera, and controls
 let Knight = sprites.create(img`
     . . . . . 1 1 1 1 1 . . . . . .
+    . . . . 1 1 1 1 1 1 1 . . . . .
     . . . . 1 . . . . . 1 . . . . .
-    . . . . 1 . . . . . 1 . . . . .
-    . . . . 1 . . . . . 1 . . . . .
-    . . . . 1 . . . . . 1 . . . . .
-    . . . . 1 . . . . . 1 . . . . .
+    . . . . 1 1 1 1 1 1 1 . . . . .
+    . . . . 1 . 1 . 1 . 1 . . . . .
+    . . . . 1 1 . 1 . 1 1 . . . . .
     . . . . . 1 1 1 1 1 . . . . . .
     . . . . . . . . . . . . . . . .
     . . . . 1 1 1 1 1 1 1 . . . . .
-    . . . . 1 . . . . . 1 . . . . .
-    . . . . 1 . . . . . 1 . . . . .
-    . . . . 1 . . . . . 1 . . . . .
-    . . . . 1 . . . . . 1 . . . . .
+    . . . . 1 1 1 1 1 1 1 . . . . .
+    . . . . 1 1 1 1 1 1 1 . . . . .
+    . . . . 1 1 1 1 1 1 1 . . . . .
+    . . 1 . 1 1 1 1 1 1 1 . 1 . . .
     . . . . 1 1 1 1 1 1 1 . . . . .
     . . . . . . . . . . . . . . . .
     . . . . . 1 . . . 1 . . . . . .
 `)
-controller.moveSprite(Knight, 50, 0)
+controller.moveSprite(Knight, 75, 0)
 scene.cameraFollowSprite(Knight)
 Knight.ay = 275
 let statusbar = statusbars.create(22, 4, 0)
@@ -67,22 +67,22 @@ scene.setTileMap(img`
     bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 `)
 scene.setTile(11, img`
-    b b b b b b b b b b b b b b b b
-    b b b b b b b b b b b b b b b b
-    b b b b b b b b b b b b b b b b
-    b b b b b b b b b b b b b b b b
-    b b b b b b b b b b b b b b b b
-    b b b b b b b b b b b b b b b b
-    b b b b b b b b b b b b b b b b
-    b b b b b b b b b b b b b b b b
-    b b b b b b b b b b b b b b b b
-    b b b b b b b b b b b b b b b b
-    b b b b b b b b b b b b b b b b
-    b b b b b b b b b b b b b b b b
-    b b b b b b b b b b b b b b b b
-    b b b b b b b b b b b b b b b b
-    b b b b b b b b b b b b b b b b
-    b b b b b b b b b b b b b b b b
+    f b b f b b b f b b f b b f b b
+    f b b f b b b f b b f b b f b b
+    f f f f f f f f f f f f f f f f
+    b f b b f b f b b b b f b b f b
+    b f b b f b f b b b b f b b f b
+    b f b b f b f b b b b f b b f b
+    b f b b f b f b b b b f b b f b
+    f f f f f f f f f f f f f f f f
+    f b b f b b b f b b f b b f b b
+    f b b f b b b f b b f b b f b b
+    f b b f b b b f b b f b b f b b
+    f b b f b b b f b b f b b f b b
+    f f f f f f f f f f f f f f f f
+    b f b b f b f b b b b f b b f b
+    b f b b f b f b b b b f b b f b
+    b f b b f b f b b b b f b b f b
 `, true)
 scene.setTile(6, img`
     . . . . . . . . . . . . . . . .
