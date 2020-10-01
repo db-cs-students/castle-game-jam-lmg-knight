@@ -135,22 +135,22 @@ scene.set_tile(14, img("""
     . . . . e e e e e e e e e . . .
 """))
 scene.set_tile(8, img("""
-    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-    8 8 8 a 8 8 8 8 a 8 8 8 8 8 8 2
-    8 8 8 a 8 8 8 8 a 8 8 8 8 8 8 2
-    8 8 8 a 8 8 8 a 8 8 8 8 8 8 8 2
-    8 8 a a 8 8 8 a 8 8 8 8 8 8 8 2
-    8 8 a 8 8 a a 8 8 8 8 8 8 8 8 2
-    8 a 8 8 8 a 8 8 8 8 8 8 a a a 2
-    8 a 8 8 8 a 8 8 8 8 8 a a 8 8 2
-    a a 8 8 a 8 8 8 8 8 a a 8 8 8 2
-    a 8 8 8 a 8 8 8 8 a a 8 8 8 8 2
-    a 8 8 a 8 8 8 8 a a 8 8 8 8 8 2
-    a 8 a a 8 8 8 a a 8 8 8 8 8 8 2
-    a 8 a 8 8 a a 8 8 8 8 8 8 8 8 2
-    8 a a 8 a a 8 8 8 8 8 8 8 8 8 2
-    a a a a a 8 8 8 8 8 8 8 8 8 8 2
-    a a 8 8 8 8 8 8 8 8 8 8 8 8 8 2
+    a a a a a a a a a a a a a a a a
+    8 8 8 a 8 8 8 8 a 8 8 8 8 8 8 a
+    8 8 8 a 8 8 8 8 a 8 8 8 8 8 8 a
+    8 8 8 a 8 8 8 a 8 8 8 8 8 8 8 a
+    8 8 a a 8 8 8 a 8 8 8 8 8 8 8 a
+    8 8 a 8 8 a a 8 8 8 8 8 8 8 8 a
+    8 a 8 8 8 a 8 8 8 8 8 8 a a a a
+    8 a 8 8 8 a 8 8 8 8 8 a a 8 8 a
+    a a 8 8 a 8 8 8 8 8 a a 8 8 8 a
+    a 8 8 8 a 8 8 8 8 a a 8 8 8 8 a
+    a 8 8 a 8 8 8 8 a a 8 8 8 8 8 a
+    a 8 a a 8 8 8 a a 8 8 8 8 8 8 a
+    a 8 a 8 8 a a 8 8 8 8 8 8 8 8 a
+    8 a a 8 a a 8 8 8 8 8 8 8 8 8 a
+    a a a a a 8 8 8 8 8 8 8 8 8 8 a
+    a a 8 8 8 8 8 8 8 8 8 8 8 8 8 a
 """))
 scene.set_tile(2, img("""
     . . . . . . . . . . . . . . . .
@@ -171,58 +171,58 @@ scene.set_tile(2, img("""
     . . 1 2 2 2 1 2 2 2 1 2 2 2 1 .
 """))
 scene.set_tile(10, img("""
-    2 a 8 8 8 8 8 8 8 8 8 a a a a a
-    2 a 8 8 8 a a a a a a 8 8 8 a a
-    2 a 8 a a a 8 8 8 8 8 8 a a a 8
-    2 a a a 8 8 8 8 8 8 a a a 8 a 8
-    2 a 8 8 8 8 8 8 8 8 a 8 8 8 a 8
-    2 a 8 8 8 8 8 8 a a 8 8 8 8 a 8
-    2 a 8 8 8 8 8 8 a 8 8 8 8 8 a 8
-    2 a 8 8 8 8 8 a 8 8 8 8 8 8 a 8
-    2 a 8 8 8 8 a 8 8 8 8 8 8 8 a 8
-    2 a 8 8 8 a a 8 8 8 8 8 8 8 a 8
-    2 a 8 8 8 a 8 8 8 8 8 8 8 8 a a
-    2 a 8 8 a a 8 8 8 8 8 8 8 8 8 a
-    2 a 8 8 a 8 8 8 8 8 8 8 8 8 8 a
-    2 a 8 a a 8 8 8 8 8 8 8 8 8 8 a
-    2 a a a a a a a a a a a a a a a
-    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+    a 8 8 8 8 8 8 8 8 8 8 a a a a a
+    a 8 8 8 8 a a a a a a 8 8 8 a a
+    a a 8 a a a 8 8 8 8 8 8 a a a 8
+    a a a a 8 8 8 8 8 8 a a a 8 a 8
+    a 8 8 8 8 8 8 8 8 8 a 8 8 8 a 8
+    a 8 8 8 8 8 8 8 a a 8 8 8 8 a 8
+    a 8 8 8 8 8 8 8 a 8 8 8 8 8 a 8
+    a 8 8 8 8 8 8 a 8 8 8 8 8 8 a 8
+    a 8 8 8 8 8 a 8 8 8 8 8 8 8 a 8
+    a 8 8 8 8 a a 8 8 8 8 8 8 8 a 8
+    a 8 8 8 8 a 8 8 8 8 8 8 8 8 a a
+    a 8 8 8 a a 8 8 8 8 8 8 8 8 8 a
+    a 8 8 8 a 8 8 8 8 8 8 8 8 8 8 a
+    a 8 8 a a 8 8 8 8 8 8 8 8 8 8 a
+    a 8 a a 8 8 8 8 8 8 8 8 8 8 8 a
+    a a a a a a a a a a a a a a a a
 """))
 scene.set_tile(4, img("""
-    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-    2 a a a a a a a a a a a a a a a
-    2 a 8 8 8 a a 8 8 8 8 a 8 8 8 8
-    2 a 8 8 8 a a 8 8 8 8 a 8 8 8 8
-    2 a 8 8 8 8 a 8 8 8 8 8 a 8 8 8
-    2 a 8 8 8 8 a 8 8 8 8 8 a a 8 8
-    2 a 8 8 8 8 a 8 8 8 8 8 8 a 8 8
-    2 a 8 8 8 8 8 a 8 8 8 8 8 a 8 8
-    2 a 8 8 8 8 8 a a 8 8 8 8 a a 8
-    2 a a a 8 8 8 8 a a 8 8 8 8 a 8
-    2 a 8 a a a 8 8 8 8 a 8 8 8 a a
-    2 a 8 8 8 a a a 8 8 8 a 8 8 8 a
-    2 a 8 8 8 8 8 a a 8 8 a a 8 8 a
-    2 a 8 8 8 8 8 8 a a a 8 a a 8 a
-    2 a 8 a a a a a a a a a a a a a
-    2 a a a 8 8 8 8 8 8 8 8 8 8 a a
+    a a a a a a a a a a a a a a a a
+    a 8 8 8 8 8 a 8 8 8 a a a 8 8 8
+    a 8 8 8 8 a a 8 8 8 8 a 8 8 8 8
+    a 8 8 8 8 a a 8 8 8 8 a 8 8 8 8
+    a 8 8 8 8 8 a 8 8 8 8 8 a 8 8 8
+    a 8 8 8 8 8 a 8 8 8 8 8 a a 8 8
+    a 8 8 8 8 8 a 8 8 8 8 8 8 a 8 8
+    a 8 8 8 8 8 8 a 8 8 8 8 8 a 8 8
+    a a 8 8 8 8 8 a a 8 8 8 8 a a 8
+    a a a a 8 8 8 8 a a 8 8 8 8 a 8
+    a 8 8 a a a 8 8 8 8 a 8 8 8 a a
+    a 8 8 8 8 a a a 8 8 8 a 8 8 8 a
+    a 8 8 8 8 8 8 a a 8 8 a a 8 8 a
+    a 8 8 8 8 8 8 8 a a a 8 a a 8 a
+    a 8 8 a a a a a a a a a a a a a
+    a a a a 8 8 8 8 8 8 8 8 8 8 a a
 """))
 scene.set_tile(7, img("""
-    a a 8 8 8 8 8 8 8 8 8 8 8 8 8 2
-    a a a a a a a a 8 8 8 8 8 8 8 2
-    8 a a a 8 8 8 8 a a 8 8 8 8 8 2
-    8 a 8 a a 8 8 8 8 a a 8 8 8 8 2
-    8 a 8 8 a 8 8 8 8 8 a 8 8 8 8 2
-    8 a 8 8 a a a 8 8 8 a a 8 8 8 2
-    8 a 8 8 8 8 a a 8 8 8 a a a a 2
-    8 a 8 8 8 8 8 a a 8 8 8 8 8 8 2
-    8 a 8 8 8 8 8 8 a a a 8 8 8 8 2
-    8 a a 8 8 8 8 8 8 8 a a 8 8 8 2
-    8 8 a 8 8 8 8 8 8 8 8 a a 8 8 2
-    8 8 a a 8 8 8 8 8 8 8 8 a 8 8 2
-    8 8 8 a 8 8 8 8 8 8 8 8 a a 8 2
-    8 8 8 a a 8 8 8 8 8 8 8 8 a a 2
-    8 8 8 8 a 8 8 8 8 8 8 8 8 8 a 2
-    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+    a a 8 8 8 8 8 8 8 8 8 8 8 8 8 a
+    a a a a a a a a 8 8 8 8 8 8 8 a
+    8 a a a 8 8 8 8 a a 8 8 8 8 8 a
+    8 a 8 a a 8 8 8 8 a a 8 8 8 8 a
+    8 a 8 8 a 8 8 8 8 8 a 8 8 8 8 a
+    8 a 8 8 a a a 8 8 8 a a 8 8 a a
+    8 a 8 8 8 8 a a 8 8 8 a a a a a
+    8 a 8 8 8 8 8 a a 8 8 8 8 8 8 a
+    8 a 8 8 8 8 8 8 a a a 8 8 8 8 a
+    8 a a 8 8 8 8 8 8 8 a a 8 8 8 a
+    8 8 a 8 8 8 8 8 8 8 8 a a 8 8 a
+    8 8 a a 8 8 8 8 8 8 8 8 a 8 8 a
+    8 8 8 a 8 8 8 8 8 8 8 8 a a a a
+    8 8 8 a a 8 8 8 8 8 8 8 8 a a a
+    8 8 8 a a 8 8 8 8 8 8 8 8 8 8 a
+    a a a a a a a a a a a a a a a a
 """))
 
 #Make life losing system

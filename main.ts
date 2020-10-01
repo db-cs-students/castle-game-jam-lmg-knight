@@ -136,22 +136,22 @@ scene.setTile(14, img`
     . . . . e e e e e e e e e . . .
 `)
 scene.setTile(8, img`
-    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-    8 8 8 a 8 8 8 8 a 8 8 8 8 8 8 2
-    8 8 8 a 8 8 8 8 a 8 8 8 8 8 8 2
-    8 8 8 a 8 8 8 a 8 8 8 8 8 8 8 2
-    8 8 a a 8 8 8 a 8 8 8 8 8 8 8 2
-    8 8 a 8 8 a a 8 8 8 8 8 8 8 8 2
-    8 a 8 8 8 a 8 8 8 8 8 8 a a a 2
-    8 a 8 8 8 a 8 8 8 8 8 a a 8 8 2
-    a a 8 8 a 8 8 8 8 8 a a 8 8 8 2
-    a 8 8 8 a 8 8 8 8 a a 8 8 8 8 2
-    a 8 8 a 8 8 8 8 a a 8 8 8 8 8 2
-    a 8 a a 8 8 8 a a 8 8 8 8 8 8 2
-    a 8 a 8 8 a a 8 8 8 8 8 8 8 8 2
-    8 a a 8 a a 8 8 8 8 8 8 8 8 8 2
-    a a a a a 8 8 8 8 8 8 8 8 8 8 2
-    a a 8 8 8 8 8 8 8 8 8 8 8 8 8 2
+    a a a a a a a a a a a a a a a a
+    8 8 8 a 8 8 8 8 a 8 8 8 8 8 8 a
+    8 8 8 a 8 8 8 8 a 8 8 8 8 8 8 a
+    8 8 8 a 8 8 8 a 8 8 8 8 8 8 8 a
+    8 8 a a 8 8 8 a 8 8 8 8 8 8 8 a
+    8 8 a 8 8 a a 8 8 8 8 8 8 8 8 a
+    8 a 8 8 8 a 8 8 8 8 8 8 a a a a
+    8 a 8 8 8 a 8 8 8 8 8 a a 8 8 a
+    a a 8 8 a 8 8 8 8 8 a a 8 8 8 a
+    a 8 8 8 a 8 8 8 8 a a 8 8 8 8 a
+    a 8 8 a 8 8 8 8 a a 8 8 8 8 8 a
+    a 8 a a 8 8 8 a a 8 8 8 8 8 8 a
+    a 8 a 8 8 a a 8 8 8 8 8 8 8 8 a
+    8 a a 8 a a 8 8 8 8 8 8 8 8 8 a
+    a a a a a 8 8 8 8 8 8 8 8 8 8 a
+    a a 8 8 8 8 8 8 8 8 8 8 8 8 8 a
 `)
 scene.setTile(2, img`
     . . . . . . . . . . . . . . . .
@@ -172,58 +172,58 @@ scene.setTile(2, img`
     . . 1 2 2 2 1 2 2 2 1 2 2 2 1 .
 `)
 scene.setTile(10, img`
-    2 a 8 8 8 8 8 8 8 8 8 a a a a a
-    2 a 8 8 8 a a a a a a 8 8 8 a a
-    2 a 8 a a a 8 8 8 8 8 8 a a a 8
-    2 a a a 8 8 8 8 8 8 a a a 8 a 8
-    2 a 8 8 8 8 8 8 8 8 a 8 8 8 a 8
-    2 a 8 8 8 8 8 8 a a 8 8 8 8 a 8
-    2 a 8 8 8 8 8 8 a 8 8 8 8 8 a 8
-    2 a 8 8 8 8 8 a 8 8 8 8 8 8 a 8
-    2 a 8 8 8 8 a 8 8 8 8 8 8 8 a 8
-    2 a 8 8 8 a a 8 8 8 8 8 8 8 a 8
-    2 a 8 8 8 a 8 8 8 8 8 8 8 8 a a
-    2 a 8 8 a a 8 8 8 8 8 8 8 8 8 a
-    2 a 8 8 a 8 8 8 8 8 8 8 8 8 8 a
-    2 a 8 a a 8 8 8 8 8 8 8 8 8 8 a
-    2 a a a a a a a a a a a a a a a
-    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+    a 8 8 8 8 8 8 8 8 8 8 a a a a a
+    a 8 8 8 8 a a a a a a 8 8 8 a a
+    a a 8 a a a 8 8 8 8 8 8 a a a 8
+    a a a a 8 8 8 8 8 8 a a a 8 a 8
+    a 8 8 8 8 8 8 8 8 8 a 8 8 8 a 8
+    a 8 8 8 8 8 8 8 a a 8 8 8 8 a 8
+    a 8 8 8 8 8 8 8 a 8 8 8 8 8 a 8
+    a 8 8 8 8 8 8 a 8 8 8 8 8 8 a 8
+    a 8 8 8 8 8 a 8 8 8 8 8 8 8 a 8
+    a 8 8 8 8 a a 8 8 8 8 8 8 8 a 8
+    a 8 8 8 8 a 8 8 8 8 8 8 8 8 a a
+    a 8 8 8 a a 8 8 8 8 8 8 8 8 8 a
+    a 8 8 8 a 8 8 8 8 8 8 8 8 8 8 a
+    a 8 8 a a 8 8 8 8 8 8 8 8 8 8 a
+    a 8 a a 8 8 8 8 8 8 8 8 8 8 8 a
+    a a a a a a a a a a a a a a a a
 `)
 scene.setTile(4, img`
-    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-    2 a a a a a a a a a a a a a a a
-    2 a 8 8 8 a a 8 8 8 8 a 8 8 8 8
-    2 a 8 8 8 a a 8 8 8 8 a 8 8 8 8
-    2 a 8 8 8 8 a 8 8 8 8 8 a 8 8 8
-    2 a 8 8 8 8 a 8 8 8 8 8 a a 8 8
-    2 a 8 8 8 8 a 8 8 8 8 8 8 a 8 8
-    2 a 8 8 8 8 8 a 8 8 8 8 8 a 8 8
-    2 a 8 8 8 8 8 a a 8 8 8 8 a a 8
-    2 a a a 8 8 8 8 a a 8 8 8 8 a 8
-    2 a 8 a a a 8 8 8 8 a 8 8 8 a a
-    2 a 8 8 8 a a a 8 8 8 a 8 8 8 a
-    2 a 8 8 8 8 8 a a 8 8 a a 8 8 a
-    2 a 8 8 8 8 8 8 a a a 8 a a 8 a
-    2 a 8 a a a a a a a a a a a a a
-    2 a a a 8 8 8 8 8 8 8 8 8 8 a a
+    a a a a a a a a a a a a a a a a
+    a 8 8 8 8 8 a 8 8 8 a a a 8 8 8
+    a 8 8 8 8 a a 8 8 8 8 a 8 8 8 8
+    a 8 8 8 8 a a 8 8 8 8 a 8 8 8 8
+    a 8 8 8 8 8 a 8 8 8 8 8 a 8 8 8
+    a 8 8 8 8 8 a 8 8 8 8 8 a a 8 8
+    a 8 8 8 8 8 a 8 8 8 8 8 8 a 8 8
+    a 8 8 8 8 8 8 a 8 8 8 8 8 a 8 8
+    a a 8 8 8 8 8 a a 8 8 8 8 a a 8
+    a a a a 8 8 8 8 a a 8 8 8 8 a 8
+    a 8 8 a a a 8 8 8 8 a 8 8 8 a a
+    a 8 8 8 8 a a a 8 8 8 a 8 8 8 a
+    a 8 8 8 8 8 8 a a 8 8 a a 8 8 a
+    a 8 8 8 8 8 8 8 a a a 8 a a 8 a
+    a 8 8 a a a a a a a a a a a a a
+    a a a a 8 8 8 8 8 8 8 8 8 8 a a
 `)
 scene.setTile(7, img`
-    a a 8 8 8 8 8 8 8 8 8 8 8 8 8 2
-    a a a a a a a a 8 8 8 8 8 8 8 2
-    8 a a a 8 8 8 8 a a 8 8 8 8 8 2
-    8 a 8 a a 8 8 8 8 a a 8 8 8 8 2
-    8 a 8 8 a 8 8 8 8 8 a 8 8 8 8 2
-    8 a 8 8 a a a 8 8 8 a a 8 8 8 2
-    8 a 8 8 8 8 a a 8 8 8 a a a a 2
-    8 a 8 8 8 8 8 a a 8 8 8 8 8 8 2
-    8 a 8 8 8 8 8 8 a a a 8 8 8 8 2
-    8 a a 8 8 8 8 8 8 8 a a 8 8 8 2
-    8 8 a 8 8 8 8 8 8 8 8 a a 8 8 2
-    8 8 a a 8 8 8 8 8 8 8 8 a 8 8 2
-    8 8 8 a 8 8 8 8 8 8 8 8 a a 8 2
-    8 8 8 a a 8 8 8 8 8 8 8 8 a a 2
-    8 8 8 8 a 8 8 8 8 8 8 8 8 8 a 2
-    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
+    a a 8 8 8 8 8 8 8 8 8 8 8 8 8 a
+    a a a a a a a a 8 8 8 8 8 8 8 a
+    8 a a a 8 8 8 8 a a 8 8 8 8 8 a
+    8 a 8 a a 8 8 8 8 a a 8 8 8 8 a
+    8 a 8 8 a 8 8 8 8 8 a 8 8 8 8 a
+    8 a 8 8 a a a 8 8 8 a a 8 8 a a
+    8 a 8 8 8 8 a a 8 8 8 a a a a a
+    8 a 8 8 8 8 8 a a 8 8 8 8 8 8 a
+    8 a 8 8 8 8 8 8 a a a 8 8 8 8 a
+    8 a a 8 8 8 8 8 8 8 a a 8 8 8 a
+    8 8 a 8 8 8 8 8 8 8 8 a a 8 8 a
+    8 8 a a 8 8 8 8 8 8 8 8 a 8 8 a
+    8 8 8 a 8 8 8 8 8 8 8 8 a a a a
+    8 8 8 a a 8 8 8 8 8 8 8 8 a a a
+    8 8 8 a a 8 8 8 8 8 8 8 8 8 8 a
+    a a a a a a a a a a a a a a a a
 `)
 // Make life losing system
 scene.onHitTile(SpriteKind.Player, 2, function on_hit_tile(sprite: Sprite) {
