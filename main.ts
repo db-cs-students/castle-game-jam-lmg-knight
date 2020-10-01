@@ -23,13 +23,16 @@ let Knight = sprites.create(img`
     . . . . . . . . . . . . . . . .
     . . . . . 1 . . . 1 . . . . . .
 `)
-controller.moveSprite(Knight)
+controller.moveSprite(Knight, 50, 0)
 scene.cameraFollowSprite(Knight)
-Knight.ay = 250
+Knight.ay = 275
 let statusbar = statusbars.create(22, 4, 0)
 statusbar.setLabel("HP")
 statusbars.getStatusBarAttachedTo(StatusBarKind.Health, Knight)
 statusbar.attachToSprite(Knight)
+controller.up.onEvent(ControllerButtonEvent.Pressed, function jump() {
+    Knight.vy = -100
+})
 // Make the level
 scene.setTileMap(img`
     bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
@@ -38,14 +41,14 @@ scene.setTileMap(img`
     b..................................................................................................b
     b..................................................................................................b
     b...............................5.....................5............5........5.........5............b
-    b..................................................................................................b
+    b..............................................................................2...................b
     b.......................5.........................................bbbbbbbbbbbbbbbbbbbbb............b
     b...e.........................bbbbbbbbbb.......5.............5...bb................................b
     bbbbbbbbb.......5...........bb..................................bb.................................b
-    b....5...............bbbbbbb..........................e........bb..................................b
+    b....................bbbbbbb...............2..........e......2.bb..................................b
     b...................b......................bbbbbbbbbbbbbbbbbbbbb...................................b
     b.............bbbbbb..................................................................88...........b
-    b............b..........................................................5.............88.2.........b
+    b....5.......b..........................................................5.............88.2.........b
     b...........bb........................................5..............................bbbbbb........b
     b..........bb.....................................................bbbbbbbbbbbb.....................b
     b.2.......bb.............................5....bbbbbbbbbbbbbbbb.....................................b
@@ -58,28 +61,28 @@ scene.setTileMap(img`
     b..........bbbbbbbb..b...5...5.b.........5.....bbbbbbbbbbbbbbbbbb..b...........b...........b.......b
     b...................bb.........b...............b................b..b...........b......e....b.......b
     b..5......2........bbb.........b......bbbbbbbb.b....5..........5b..b...bbbb....b..bbbbbbbbbb.......b
-    b.......bbbbbbbbbbbbbb...bbbbbbb...bbbb6.......b....bbbbbbbbbbbbb..b...........b...................b
-    b......b.............bb........................bb............5..........5......bb..................b
-    b....bbb.............bbb.......................bbb..5................2.......2.bbb.................b
+    b.......bbbbbbbbbbbbbb...bbbbbbb.....bb6.......b....bbbbbbbbbbbbb..b...........b...................b
+    b......b.............bb.............b..........bb............5..........5......bb..................b
+    b....bbb.............bbb...........b...........bbb..5................2.......2.bbb.................b
     bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
 `)
 scene.setTile(11, img`
-    f b b b b f b b b b f b b b b b
-    f b b b b f b b b b f b b b b b
-    f b b b b f b b b b f b b b b b
-    f b b b b f f f f f f b b b b b
-    f f f f f f b b b f b b b b b b
-    b b f b f f b b b f f f f f f f
-    b b f b f f b b b b f b b b b b
-    b b f b f f b b b b f b b b f f
-    b b f b f f f f f f f f f f f b
-    b b f f f b b f b b b b f b b b
-    b b b f b b b f f f f f f b b b
-    f f f f b b b f b b f b b b b b
-    b b b f b b b f b b f f f f f f
-    b b b f f f f f b b b b b b b b
-    b b b f b b b f f f f f b b b b
-    b b b f f b b b b b f f b b b b
+    b b b b b b b b b b b b b b b b
+    b b b b b b b b b b b b b b b b
+    b b b b b b b b b b b b b b b b
+    b b b b b b b b b b b b b b b b
+    b b b b b b b b b b b b b b b b
+    b b b b b b b b b b b b b b b b
+    b b b b b b b b b b b b b b b b
+    b b b b b b b b b b b b b b b b
+    b b b b b b b b b b b b b b b b
+    b b b b b b b b b b b b b b b b
+    b b b b b b b b b b b b b b b b
+    b b b b b b b b b b b b b b b b
+    b b b b b b b b b b b b b b b b
+    b b b b b b b b b b b b b b b b
+    b b b b b b b b b b b b b b b b
+    b b b b b b b b b b b b b b b b
 `, true)
 scene.setTile(6, img`
     . . . . . . . . . . . . . . . .
