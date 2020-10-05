@@ -312,7 +312,7 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function on_overlap(s
     info.changeScoreBy(3)
 })
 // make the coins
-let my_sprite = sprites.create(img`
+let gem = sprites.create(img`
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
     . . . f f f f f f f f f f . . .
@@ -330,4 +330,3 @@ let my_sprite = sprites.create(img`
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
 `)
-my_sprite.overlapsWith(null)

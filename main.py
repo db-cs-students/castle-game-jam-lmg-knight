@@ -314,7 +314,7 @@ def on_overlap(sprite, otherSprite):
 sprites.on_overlap(SpriteKind.projectile, SpriteKind.enemy, on_overlap)
 
 #make the coins
-my_sprite = sprites.create(img("""
+gem = sprites.create(img("""
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
     . . . f f f f f f f f f f . . .
@@ -332,4 +332,3 @@ my_sprite = sprites.create(img("""
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
 """))
-my_sprite.overlaps_with(None)
