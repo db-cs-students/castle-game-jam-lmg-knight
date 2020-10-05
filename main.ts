@@ -37,6 +37,7 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function jump() {
 })
 info.player1.setLife(1)
 game.showLongText("You need at least 10 coins to exit through the portal.", DialogLayout.Bottom)
+info.setScore(0)
 // Make the level
 scene.setTileMap(img`
     bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
@@ -45,30 +46,30 @@ scene.setTileMap(img`
     b..................................................................................................b
     b..................................................................................................b
     b...............................5..................................5..................5............b
-    b...................................................bbbbb...............2......2...................b
-    b.................................................................bbbbbbbbbbbbbbbbbbbbb............b
+    b...................................................bbbbb..........................................b
+    b.................................................................bbbbbb2bbbbbb2bbbbbbb............b
     b...e.........................bbbbbbbbbb.......5.................bb................................b
     bbbbbbbbb.......5...........bb..................................bb.................................b
-    b....................bbbbbbb...............2..........e......2.bb..................................b
-    b...................b......................bbbbbbbbbbbbbbbbbbbbb...................................b
+    b....................bbbbbbb..........................e........bb..................................b
+    b...................b......................2bbbbbbbbbbbbbbbbb2bb...................................b
     b.............bbbbbb..................................................................48...........b
     b....5.......b..........................................................5.............a7.2.........b
-    b...........bb........................................5..............2..........2....bbbbbb........b
-    b..........bb.....................................................bbbbbbbbbbbbbbbb.................b
-    b.2.......bb...............5.............5....bbbbbbbbbbbbbbbb.....................................b
-    bbbbbbbbb..............22....22..............bb...............bb....5.......5......................b
-    b....................bbbbbbbbbbb......bbbbbbbb..................bb.................................b
-    b........b...........b6........b..................................bbbbbbbbbbbbb2...........2.......b
-    b........bb...bbbbb..b.........b...............................................bbbbbbbbbbbbb.......b
+    b...........bb........................................5..............................bbbb2b........b
+    b..........bb.....................................................bbb2bbbbbbbbbb2b.................b
+    b.........bb...............5.............5....bbbbbbbbbbbbbbbb.....................................b
+    bb2bbbbbb....................................bb...............bb....5.......5......................b
+    b....................bb22bbbb22b......bbbbbbbb..................bb.................................b
+    b........b...........b6........b..................................bbbbbbbbbbbbb....................b
+    b........bb...bbbbb..b.........b...............................................2bbbbbbbbbbb2.......b
     b.......5.bb.........b.........b.............................5.................b6..........bbbb....b
-    b..........bb........b.........b.....................2....2.............5......b..........5b.......b
-    b..........bbbbbbbb..b...5.....b.........5.....bbbbbbbbbbbbbbbbbb..b...........b...........b....bbbb
+    b..........bb........b.........b........................................5......b..........5b.......b
+    b..........bbbbbbbb..b...5.....b.........5.....bbbbbb2bbbb2bbbbbb..b...........b...........b....bbbb
     b...................bb.........b...............b................b..b...........b......e....b.......b
-    b..5......2........bbb.........b......bbbbbbbb.b...............5b..b...bbbb....b..bbbbbbbbbbbbb....b
+    b..5...............bbb.........b......bbbbbbbb.b...............5b..b...bbbb....b..bbbbbbbbbbbbb....b
     b.......bbbbbbbbbbbbbb...bbbbbbb.....bb6.......b....bbbbbbbbbbbbb..b...........b..................bb
     b......b.............bb.............b.......5.bbb............5.................bb................bbb
-    b....bbb.............bbb...........b...........bbb...................2.......2.bbb......2.......bbbb
-    bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+    b....bbb.............bbb...........b...........bbb.............................bbb..............bbbb
+    bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb2bbbbbbb2bbbbbbbbbb2bbbbbbbbbbb
 `)
 scene.setTile(11, img`
     f b b f b b b f b b f b b f b b
@@ -161,22 +162,22 @@ scene.setTile(8, img`
     a a 8 8 8 8 8 8 8 8 8 8 8 8 8 a
 `)
 scene.setTile(2, img`
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . 1 . . . 1 . . . 1 . . .
-    . . . 1 2 1 . 1 2 1 . 1 2 1 . .
-    . . 1 2 2 2 1 2 2 2 1 2 2 2 1 .
+    . . 1 . . . 1 . . . 1 . . . 1 .
+    . 1 2 1 . 1 2 1 . 1 2 1 . 1 2 1
+    1 2 2 2 1 2 2 2 1 2 2 2 1 2 2 2
+    f b b f b f b b f b f b b f b b
+    f b b f b f b b f b f b b f b b
+    f f f f f f f f f f f f f f f f
+    b f b b f b f b b f b f b b f b
+    b f b b f b f b b f b f b b f b
+    b f b b f b f b b f b f b b f b
+    b f b b f b f b b f b f b b f b
+    f f f f f f f f f f f f f f f f
+    f b b f b f b b f b f b b f b b
+    f b b f b f b b f b f b b f b b
+    f f f f f f f f f f f f f f f f
+    b b f b b b f b b f b f b b f b
+    b b f b b b f b b f b f b b f b
 `, true)
 scene.setTile(10, img`
     a 8 8 8 8 8 8 8 8 8 8 a a a a a
@@ -303,7 +304,7 @@ let voodoo_skull = sprites.create(img`
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
 `, SpriteKind.Enemy)
-voodoo_skull.follow(Knight, 25)
+voodoo_skull.follow(Knight, 50)
 let corrupt_knight = sprites.create(img`
     . . . . . . c c c c . . . . . .
     . . . . . c c c c c c . . . . .
@@ -322,3 +323,10 @@ let corrupt_knight = sprites.create(img`
     . . . . . . . . . . . . . . . .
     . . . . . c . . . . c . . . . .
 `, SpriteKind.Enemy)
+corrupt_knight.setPosition(0, 0)
+// Make the damage and stuff
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function on_overlap(sprite: Sprite, otherSprite: Sprite) {
+    otherSprite.destroy()
+    sprite.destroy()
+    info.changeScoreBy(3)
+})
