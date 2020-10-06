@@ -335,7 +335,6 @@ game.onUpdate(function on_update2() {
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function on_overlap(sprite: Sprite, otherSprite: Sprite) {
     otherSprite.destroy()
     sprite.destroy()
-    info.changeScoreBy(3)
 })
 //  Make the coins
 let gem = sprites.create(img`
@@ -428,7 +427,6 @@ let ruby = sprites.create(img`
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
 `, SpriteKind.Food)
-info.changeScoreBy(1)
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function on_overlap2(sprite: Sprite, otherSprite: Sprite) {
     otherSprite.destroy()
 })

@@ -336,7 +336,6 @@ game.on_update(on_update2)
 def on_overlap(sprite, otherSprite):
     otherSprite.destroy()
     sprite.destroy()
-    info.change_score_by(3)
 sprites.on_overlap(SpriteKind.projectile, SpriteKind.enemy, on_overlap)
 
 # Make the coins
@@ -432,7 +431,6 @@ ruby = sprites.create(img("""
 """),SpriteKind.food)
 def on_overlap2(sprite, otherSprite):
       otherSprite.destroy()
-info.change_score_by(1)
 sprites.on_overlap(SpriteKind.player, SpriteKind.food, on_overlap2)
 
 #set stuff places
