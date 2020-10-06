@@ -323,8 +323,19 @@ slime = sprites.create(img("""
     . 7 7 7 7 7 7 7 7 7 7 7 7 7 7 .
     . . 7 7 7 7 7 7 7 7 7 7 7 7 . .
 """),SpriteKind.enemy)
-slime.follow(Knight)
- 
+slime.set_flag(SpriteFlag.SHOW_PHYSICS, True)
+
+slime.vx = -25
+def on_update2():
+    if slime.x < 750:
+        slime.vx = 25
+game.on_update(on_update2)
+def on_update3():
+    if  slime.x < 990
+        slime.vx = -25
+game.on_update(on_update3)
+
+
 #Make the damage and stuff
 def on_overlap(sprite, otherSprite):
     otherSprite.destroy()
@@ -427,3 +438,6 @@ def on_overlap2(sprite, otherSprite):
       otherSprite.destroy()
 info.change_score_by(1)
 sprites.on_overlap(SpriteKind.player, SpriteKind.food, on_overlap2)
+
+#set stuff places
+tiles.place_on_tile(slime, tiles.get_tile_location(54, 15))

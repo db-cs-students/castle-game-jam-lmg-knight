@@ -323,7 +323,17 @@ let slime = sprites.create(img`
     . 7 7 7 7 7 7 7 7 7 7 7 7 7 7 .
     . . 7 7 7 7 7 7 7 7 7 7 7 7 . .
 `, SpriteKind.Enemy)
-slime.follow(Knight)
+slime.setFlag(SpriteFlag.ShowPhysics, true)
+slime.vx = -25
+game.onUpdate(function on_update2() {
+    if (slime.x < 750) {
+        slime.vx = 25
+    }
+    
+})
+game.onUpdate(function on_update3() {
+    
+})
 // Make the damage and stuff
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function on_overlap(sprite: Sprite, otherSprite: Sprite) {
     otherSprite.destroy()
@@ -425,3 +435,5 @@ info.changeScoreBy(1)
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function on_overlap2(sprite: Sprite, otherSprite: Sprite) {
     otherSprite.destroy()
 })
+// set stuff places
+tiles.placeOnTile(slime, tiles.getTileLocation(54, 15))
