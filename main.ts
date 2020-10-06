@@ -305,6 +305,25 @@ let voodoo_skull = sprites.create(img`
     . . . . . . . . . . . . . . . .
 `, SpriteKind.Enemy)
 voodoo_skull.follow(Knight, 50)
+let slime = sprites.create(img`
+    . . . . . . . . . . . . . . . .
+    . . . . . f f f f f f . . . . .
+    . . . . . f f f f f f . . . . .
+    . . . . . 8 8 8 8 8 8 . . . . .
+    . . . . . f f f f f f . . . . .
+    . . . . f f f f f f f f . . . .
+    . . . 7 7 7 7 7 7 7 7 7 7 . . .
+    . . 7 7 7 7 7 7 7 7 7 7 7 7 . .
+    . 7 7 7 2 f 7 7 7 7 f 2 7 7 7 .
+    . 7 7 7 f f 7 7 7 7 f f 7 7 7 .
+    . 7 7 7 7 7 7 7 7 7 7 7 7 7 7 .
+    . 7 7 7 7 7 7 7 7 7 7 7 7 7 7 .
+    . 7 7 7 7 7 7 7 7 7 7 7 7 7 7 .
+    . 7 7 7 7 7 7 7 7 7 7 7 7 7 7 .
+    . 7 7 7 7 7 7 7 7 7 7 7 7 7 7 .
+    . . 7 7 7 7 7 7 7 7 7 7 7 7 . .
+`)
+slime.follow(Knight)
 // Make the damage and stuff
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function on_overlap(sprite: Sprite, otherSprite: Sprite) {
     otherSprite.destroy()

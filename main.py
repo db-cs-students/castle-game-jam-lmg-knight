@@ -305,6 +305,25 @@ voodoo_skull = sprites.create(img("""
     . . . . . . . . . . . . . . . .
 """),SpriteKind.enemy)
 voodoo_skull.follow(Knight, 50)
+slime = sprites.create(img("""
+    . . . . . . . . . . . . . . . .
+    . . . . . f f f f f f . . . . .
+    . . . . . f f f f f f . . . . .
+    . . . . . 8 8 8 8 8 8 . . . . .
+    . . . . . f f f f f f . . . . .
+    . . . . f f f f f f f f . . . .
+    . . . 7 7 7 7 7 7 7 7 7 7 . . .
+    . . 7 7 7 7 7 7 7 7 7 7 7 7 . .
+    . 7 7 7 2 f 7 7 7 7 f 2 7 7 7 .
+    . 7 7 7 f f 7 7 7 7 f f 7 7 7 .
+    . 7 7 7 7 7 7 7 7 7 7 7 7 7 7 .
+    . 7 7 7 7 7 7 7 7 7 7 7 7 7 7 .
+    . 7 7 7 7 7 7 7 7 7 7 7 7 7 7 .
+    . 7 7 7 7 7 7 7 7 7 7 7 7 7 7 .
+    . 7 7 7 7 7 7 7 7 7 7 7 7 7 7 .
+    . . 7 7 7 7 7 7 7 7 7 7 7 7 . .
+"""))
+slime.follow(Knight)
 
 #Make the damage and stuff
 def on_overlap(sprite, otherSprite):
@@ -312,8 +331,12 @@ def on_overlap(sprite, otherSprite):
     sprite.destroy()
     info.change_score_by(3)
 sprites.on_overlap(SpriteKind.projectile, SpriteKind.enemy, on_overlap)
-
-#make the coins
+def on_overlap(sprite, otherSprite)
+    otherSprite.destroy()
+    sprite.destroy()
+    info.change_score_by(3)
+sprites.on_overlap(SpriteKind.projectile, SpriteKind.enemy, on_overlap)
+# Make the coins
 gem = sprites.create(img("""
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
