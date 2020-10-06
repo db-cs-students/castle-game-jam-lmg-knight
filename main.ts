@@ -331,9 +331,6 @@ game.onUpdate(function on_update2() {
     }
     
 })
-game.onUpdate(function on_update3() {
-    
-})
 // Make the damage and stuff
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function on_overlap(sprite: Sprite, otherSprite: Sprite) {
     otherSprite.destroy()
@@ -437,3 +434,6 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function on_overlap2(sprit
 })
 // set stuff places
 tiles.placeOnTile(slime, tiles.getTileLocation(54, 15))
+tiles.placeOnTile(gem, tiles.getTileLocation(54, 13))
+tiles.placeOnTile(coin, tiles.getTileLocation(26, 23))
+tiles.placeOnTile(gem2, tiles.getTileLocation(54, 25))
