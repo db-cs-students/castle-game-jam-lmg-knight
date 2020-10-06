@@ -322,7 +322,7 @@ let slime = sprites.create(img`
     . 7 7 7 7 7 7 7 7 7 7 7 7 7 7 .
     . 7 7 7 7 7 7 7 7 7 7 7 7 7 7 .
     . . 7 7 7 7 7 7 7 7 7 7 7 7 . .
-`)
+`, SpriteKind.Enemy)
 slime.follow(Knight)
 // Make the damage and stuff
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function on_overlap(sprite: Sprite, otherSprite: Sprite) {
@@ -330,7 +330,7 @@ sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function on_overlap(s
     sprite.destroy()
     info.changeScoreBy(3)
 })
-// make the coins
+//  Make the coins
 let gem = sprites.create(img`
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .

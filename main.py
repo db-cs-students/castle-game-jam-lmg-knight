@@ -322,20 +322,16 @@ slime = sprites.create(img("""
     . 7 7 7 7 7 7 7 7 7 7 7 7 7 7 .
     . 7 7 7 7 7 7 7 7 7 7 7 7 7 7 .
     . . 7 7 7 7 7 7 7 7 7 7 7 7 . .
-"""))
+"""),SpriteKind.enemy)
 slime.follow(Knight)
-
+ 
 #Make the damage and stuff
 def on_overlap(sprite, otherSprite):
     otherSprite.destroy()
     sprite.destroy()
     info.change_score_by(3)
 sprites.on_overlap(SpriteKind.projectile, SpriteKind.enemy, on_overlap)
-def on_overlap(sprite, otherSprite)
-    otherSprite.destroy()
-    sprite.destroy()
-    info.change_score_by(3)
-sprites.on_overlap(SpriteKind.projectile, SpriteKind.enemy, on_overlap)
+
 # Make the coins
 gem = sprites.create(img("""
     . . . . . . . . . . . . . . . .
