@@ -33,7 +33,7 @@ def jump():
         can_jump = Knight.is_hitting_tile(CollisionDirection.BOTTOM)
 controller.up.on_event(ControllerButtonEvent.PRESSED, jump)
 info.player1.set_life(1)
-game.show_long_text("You need to collect the valuables to exit through the portal.", DialogLayout.BOTTOM)
+game.show_long_text("Kill that birb", DialogLayout.BOTTOM)
 info.set_score(0)
 
 #Make the level
@@ -56,7 +56,7 @@ scene.set_tile_map(img("""
     b..........b......................................................bbb2bbbbbbbbbb2b.................b
     b.........b...................................bbbbbbbbbbbbbbbb.....................................b
     bb2bbbbbb....................................bb...............bb...................................b
-    b.......b............bb22bbbb22b.bbbbbbbbbbb2b..................bb.................................b
+    b....................bb22bbbb22b.bbbbbbbbbbb2b..................bb.................................b
     b........b...........b6........b..................................bbbbbbbbbbbbb....................b
     b.........b...bbbbb..b.........b...............................................2bbbbbbbbbbb2.......b
     b..........b.........b.........bb..............................................b6..........bbbb....b
@@ -342,7 +342,7 @@ lost_one = sprites.create(img("""
     . . . . 2 2 2 2 2 2 2 . . . . .
     . . . . . . . . . . . . . . . .
 """),SpriteKind.enemy)
-lost_one.follow(Knight)
+lost_one.follow(Knight, 40)
 boss_birb = sprites.create(img("""
     . . . . . . . . . . . . . . . .
     . . . . . . . . . f f f f f . .
@@ -360,7 +360,30 @@ boss_birb = sprites.create(img("""
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
-"""))
+"""),SpriteKind.enemy)
+projectile = sprites.create_projectile_from_sprite(img("""
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . e . . . . . . . . .
+    . . . . e . e 4 4 4 . . . . . .
+    . . . . . e e 4 4 4 . . . . . .
+    . . . . . . e 4 4 4 . . . . . .
+    . . . . . . e . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+"""), boss_birb,-50, 0)
+projectile.set_flag(SpriteFlag.BOUNCE_ON_WALL, True)
+def on_update_interval():
+    pass
+game.on_update_interval(500, on_update_interval)
+
 #Make the damage and stuff
 def on_overlap(sprite, otherSprite):
     otherSprite.destroy()
@@ -474,3 +497,4 @@ tiles.place_on_tile(ruby, tiles.get_tile_location(85, 22))
 tiles.place_on_tile(amulet, tiles.get_tile_location(1, 14))
 tiles.place_on_tile(voodoo_skull, tiles.get_tile_location(43, 6))
 tiles.place_on_tile(lost_one, tiles.get_tile_location(6, 23))
+tiles.place_on_tile(boss_birb, tiles.get_tile_location(93, 16))

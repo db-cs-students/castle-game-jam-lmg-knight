@@ -36,7 +36,7 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function jump() {
     
 })
 info.player1.setLife(1)
-game.showLongText("You need to collect the valuables to exit through the portal.", DialogLayout.Bottom)
+game.showLongText("Kill that birb", DialogLayout.Bottom)
 info.setScore(0)
 // Make the level
 scene.setTileMap(img`
@@ -58,7 +58,7 @@ scene.setTileMap(img`
     b..........b......................................................bbb2bbbbbbbbbb2b.................b
     b.........b...................................bbbbbbbbbbbbbbbb.....................................b
     bb2bbbbbb....................................bb...............bb...................................b
-    b.......b............bb22bbbb22b.bbbbbbbbbbb2b..................bb.................................b
+    b....................bb22bbbb22b.bbbbbbbbbbb2b..................bb.................................b
     b........b...........b6........b..................................bbbbbbbbbbbbb....................b
     b.........b...bbbbb..b.........b...............................................2bbbbbbbbbbb2.......b
     b..........b.........b.........bb..............................................b6..........bbbb....b
@@ -342,7 +342,7 @@ let lost_one = sprites.create(img`
     . . . . 2 2 2 2 2 2 2 . . . . .
     . . . . . . . . . . . . . . . .
 `, SpriteKind.Enemy)
-lost_one.follow(Knight)
+lost_one.follow(Knight, 40)
 let boss_birb = sprites.create(img`
     . . . . . . . . . . . . . . . .
     . . . . . . . . . f f f f f . .
@@ -360,7 +360,29 @@ let boss_birb = sprites.create(img`
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
-`)
+`, SpriteKind.Enemy)
+let projectile = sprites.createProjectileFromSprite(img`
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . e . . . . . . . . .
+    . . . . e . e 4 4 4 . . . . . .
+    . . . . . e e 4 4 4 . . . . . .
+    . . . . . . e 4 4 4 . . . . . .
+    . . . . . . e . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+`, boss_birb, -50, 0)
+projectile.setFlag(SpriteFlag.BounceOnWall, true)
+game.onUpdateInterval(500, function on_update_interval() {
+    
+})
 // Make the damage and stuff
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function on_overlap(sprite: Sprite, otherSprite: Sprite) {
     otherSprite.destroy()
@@ -472,3 +494,4 @@ tiles.placeOnTile(ruby, tiles.getTileLocation(85, 22))
 tiles.placeOnTile(amulet, tiles.getTileLocation(1, 14))
 tiles.placeOnTile(voodoo_skull, tiles.getTileLocation(43, 6))
 tiles.placeOnTile(lost_one, tiles.getTileLocation(6, 23))
+tiles.placeOnTile(boss_birb, tiles.getTileLocation(93, 16))
