@@ -46,9 +46,9 @@ scene.set_tile_map(img("""
     b..................................................................................................b
     b...................................................bbbbb..........................................b
     b.................................................................bbbbbb2bbbbbb2bbbbbbb............b
-    b...e.........................bbbbbbbbbb.........................bb................................b
+    b.............................bbbbbbbbbb.........................bb................................b
     bbbbbbbbb...................bb..................................bb.................................b
-    b....................bbbbbbb..........................e........bb..................................b
+    b....................bbbbbbb...................................bb..................................b
     b...................b......................2bbbbbbbbbbbbbbbbb2bb...................................b
     b.............bbbbbb..................................................................48...........b
     b............b........................................................................a7...........b
@@ -56,18 +56,18 @@ scene.set_tile_map(img("""
     b..........bb.....................................................bbb2bbbbbbbbbb2b.................b
     b.........bb..................................bbbbbbbbbbbbbbbb.....................................b
     bb2bbbbbb....................................bb...............bb...................................b
-    b....................bb22bbbb22b......bbbbbbbb..................bb.................................b
+    b....................bb22bbbb22b......bbbbbb2b..................bb.................................b
     b........b...........b6........b..................................bbbbbbbbbbbbb....................b
     b........bb...bbbbb..b.........b...............................................2bbbbbbbbbbb2.......b
     b.........bb.........b.........b...............................................b6..........bbbb....b
     b..........bb........b.........b...............................................b...........b.......b
     b..........bbbbbbbb..b.........b...............bbbbbb2bbbb2bbbbbb..b...........b...........b....bbbb
-    b...................bb.........b...............b................b..b...........b......e....b.......b
+    b...................bb.........b...............b................b..b...........b...........b.......b
     b..................bbb.........b......bbbbbbbb.b................b..b...bbbb....b..bbbbbbbbbbbbb....b
     b.......bbbbbbbbbbbbbb...bbbbbbb.....bb6.......b....bbbbbbbbbbbbb..b...........b..................bb
-    b......b.............bb.............b.........bbb..............................bb................bbb
-    b....bbb.............bbb...........b...........bbb.............................bbb..............bbbb
-    bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb2bbbbbbb2bbbbbbbbbb2bbbbbbbbbbb
+    b......b.............bb.............b.........bbb.............................bbb................bbb
+    b....bbb.............bbb...........b...........bbb..........................bbbbbb..............bbbb
+    bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb2bbbbb2bbbbbbbbbbbb2bbbbbbbbbbb
 """))
 scene.set_tile(11, img("""
     f b b f b b b f b b f b b f b b
@@ -305,38 +305,35 @@ voodoo_skull = sprites.create(img("""
     . . . . . . . . . . . . . . . .
 """),SpriteKind.enemy)
 voodoo_skull.follow(Knight, 50)
-slime = sprites.create(img("""
+jesters_mask = sprites.create(img("""
     . . . . . . . . . . . . . . . .
-    . . . . . f f f f f f . . . . .
-    . . . . . f f f f f f . . . . .
-    . . . . . 8 8 8 8 8 8 . . . . .
-    . . . . . f f f f f f . . . . .
-    . . . . f f f f f f f f . . . .
-    . . . 7 7 7 7 7 7 7 7 7 7 . . .
-    . . 7 7 7 7 7 7 7 7 7 7 7 7 . .
-    . 7 7 7 2 f 7 7 7 7 f 2 7 7 7 .
-    . 7 7 7 f f 7 7 7 7 f f 7 7 7 .
-    . 7 7 7 7 7 7 7 7 7 7 7 7 7 7 .
-    . 7 7 7 7 7 7 7 7 7 7 7 7 7 7 .
-    . 7 7 7 7 7 7 7 7 7 7 7 7 7 7 .
-    . 7 7 7 7 7 7 7 7 7 7 7 7 7 7 .
-    . 7 7 7 7 7 7 7 7 7 7 7 7 7 7 .
-    . . 7 7 7 7 7 7 7 7 7 7 7 7 . .
+    . . . . . . . . . . . . . . . .
+    . . . f f f f f 2 2 2 2 2 . . .
+    . . f f f f f 2 f 2 2 2 2 2 . .
+    . . f f 2 2 f f 2 2 f f 2 2 . .
+    . . f f 2 2 f 2 f 2 f f 2 2 . .
+    . . f f 2 2 f f 2 2 f f 2 2 . .
+    . . f f 2 2 f 2 f 2 f f 2 2 . .
+    . . f f 2 2 f f 2 2 f f 2 2 . .
+    . . f f 2 2 f 2 f 2 f f 2 2 . .
+    . . f f f f f f 2 2 2 2 2 2 . .
+    . . . f f f f 2 f 2 2 2 2 . . .
+    . . . . . f f f 2 2 2 . . . . .
+    . . . . . f f 2 f 2 2 . . . . .
+    . . . . . f f f 2 2 2 . . . . .
+    . . . . . . . . . . . . . . . .
 """),SpriteKind.enemy)
-slime.set_flag(SpriteFlag.SHOW_PHYSICS, True)
+jesters_mask.follow(Knight,60)
 
-slime.vx = -25
-def on_update2():
-    if slime.x < 750:
-        slime.vx = 25
-    
-game.on_update(on_update2)
 
 #Make the damage and stuff
 def on_overlap(sprite, otherSprite):
     otherSprite.destroy()
     sprite.destroy()
 sprites.on_overlap(SpriteKind.projectile, SpriteKind.enemy, on_overlap)
+def on_overlap3(sprite, otherSprite):
+    info.change_life_by(-1)
+sprites.on_overlap(SpriteKind.player, SpriteKind.enemy, on_overlap3)
 
 # Make the coins
 gem = sprites.create(img("""
@@ -434,7 +431,10 @@ def on_overlap2(sprite, otherSprite):
 sprites.on_overlap(SpriteKind.player, SpriteKind.food, on_overlap2)
 
 #set stuff places
-tiles.place_on_tile(slime, tiles.get_tile_location(54, 15))
+tiles.place_on_tile(jesters_mask, tiles.get_tile_location(54, 15))
 tiles.place_on_tile(gem, tiles.get_tile_location(54, 13))
 tiles.place_on_tile(coin, tiles.get_tile_location(26, 23))
 tiles.place_on_tile(gem2, tiles.get_tile_location(54, 25))
+tiles.place_on_tile(ruby, tiles.get_tile_location(85, 22))
+tiles.place_on_tile(amulet, tiles.get_tile_location(1, 14))
+tiles.place_on_tile(voodoo_skull, tiles.get_tile_location(76, 11))

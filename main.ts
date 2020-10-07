@@ -48,9 +48,9 @@ scene.setTileMap(img`
     b..................................................................................................b
     b...................................................bbbbb..........................................b
     b.................................................................bbbbbb2bbbbbb2bbbbbbb............b
-    b...e.........................bbbbbbbbbb.........................bb................................b
+    b.............................bbbbbbbbbb.........................bb................................b
     bbbbbbbbb...................bb..................................bb.................................b
-    b....................bbbbbbb..........................e........bb..................................b
+    b....................bbbbbbb...................................bb..................................b
     b...................b......................2bbbbbbbbbbbbbbbbb2bb...................................b
     b.............bbbbbb..................................................................48...........b
     b............b........................................................................a7...........b
@@ -58,18 +58,18 @@ scene.setTileMap(img`
     b..........bb.....................................................bbb2bbbbbbbbbb2b.................b
     b.........bb..................................bbbbbbbbbbbbbbbb.....................................b
     bb2bbbbbb....................................bb...............bb...................................b
-    b....................bb22bbbb22b......bbbbbbbb..................bb.................................b
+    b....................bb22bbbb22b......bbbbbb2b..................bb.................................b
     b........b...........b6........b..................................bbbbbbbbbbbbb....................b
     b........bb...bbbbb..b.........b...............................................2bbbbbbbbbbb2.......b
     b.........bb.........b.........b...............................................b6..........bbbb....b
     b..........bb........b.........b...............................................b...........b.......b
     b..........bbbbbbbb..b.........b...............bbbbbb2bbbb2bbbbbb..b...........b...........b....bbbb
-    b...................bb.........b...............b................b..b...........b......e....b.......b
+    b...................bb.........b...............b................b..b...........b...........b.......b
     b..................bbb.........b......bbbbbbbb.b................b..b...bbbb....b..bbbbbbbbbbbbb....b
     b.......bbbbbbbbbbbbbb...bbbbbbb.....bb6.......b....bbbbbbbbbbbbb..b...........b..................bb
-    b......b.............bb.............b.........bbb..............................bb................bbb
-    b....bbb.............bbb...........b...........bbb.............................bbb..............bbbb
-    bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb2bbbbbbb2bbbbbbbbbb2bbbbbbbbbbb
+    b......b.............bb.............b.........bbb.............................bbb................bbb
+    b....bbb.............bbb...........b...........bbb..........................bbbbbb..............bbbb
+    bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb2bbbbb2bbbbbbbbbbbb2bbbbbbbbbbb
 `)
 scene.setTile(11, img`
     f b b f b b b f b b f b b f b b
@@ -305,36 +305,32 @@ let voodoo_skull = sprites.create(img`
     . . . . . . . . . . . . . . . .
 `, SpriteKind.Enemy)
 voodoo_skull.follow(Knight, 50)
-let slime = sprites.create(img`
+let jesters_mask = sprites.create(img`
     . . . . . . . . . . . . . . . .
-    . . . . . f f f f f f . . . . .
-    . . . . . f f f f f f . . . . .
-    . . . . . 8 8 8 8 8 8 . . . . .
-    . . . . . f f f f f f . . . . .
-    . . . . f f f f f f f f . . . .
-    . . . 7 7 7 7 7 7 7 7 7 7 . . .
-    . . 7 7 7 7 7 7 7 7 7 7 7 7 . .
-    . 7 7 7 2 f 7 7 7 7 f 2 7 7 7 .
-    . 7 7 7 f f 7 7 7 7 f f 7 7 7 .
-    . 7 7 7 7 7 7 7 7 7 7 7 7 7 7 .
-    . 7 7 7 7 7 7 7 7 7 7 7 7 7 7 .
-    . 7 7 7 7 7 7 7 7 7 7 7 7 7 7 .
-    . 7 7 7 7 7 7 7 7 7 7 7 7 7 7 .
-    . 7 7 7 7 7 7 7 7 7 7 7 7 7 7 .
-    . . 7 7 7 7 7 7 7 7 7 7 7 7 . .
+    . . . . . . . . . . . . . . . .
+    . . . f f f f f 2 2 2 2 2 . . .
+    . . f f f f f 2 f 2 2 2 2 2 . .
+    . . f f 2 2 f f 2 2 f f 2 2 . .
+    . . f f 2 2 f 2 f 2 f f 2 2 . .
+    . . f f 2 2 f f 2 2 f f 2 2 . .
+    . . f f 2 2 f 2 f 2 f f 2 2 . .
+    . . f f 2 2 f f 2 2 f f 2 2 . .
+    . . f f 2 2 f 2 f 2 f f 2 2 . .
+    . . f f f f f f 2 2 2 2 2 2 . .
+    . . . f f f f 2 f 2 2 2 2 . . .
+    . . . . . f f f 2 2 2 . . . . .
+    . . . . . f f 2 f 2 2 . . . . .
+    . . . . . f f f 2 2 2 . . . . .
+    . . . . . . . . . . . . . . . .
 `, SpriteKind.Enemy)
-slime.setFlag(SpriteFlag.ShowPhysics, true)
-slime.vx = -25
-game.onUpdate(function on_update2() {
-    if (slime.x < 750) {
-        slime.vx = 25
-    }
-    
-})
+jesters_mask.follow(Knight, 60)
 // Make the damage and stuff
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function on_overlap(sprite: Sprite, otherSprite: Sprite) {
     otherSprite.destroy()
     sprite.destroy()
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function on_overlap3(sprite: Sprite, otherSprite: Sprite) {
+    info.changeLifeBy(-1)
 })
 //  Make the coins
 let gem = sprites.create(img`
@@ -431,7 +427,10 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function on_overlap2(sprit
     otherSprite.destroy()
 })
 // set stuff places
-tiles.placeOnTile(slime, tiles.getTileLocation(54, 15))
+tiles.placeOnTile(jesters_mask, tiles.getTileLocation(54, 15))
 tiles.placeOnTile(gem, tiles.getTileLocation(54, 13))
 tiles.placeOnTile(coin, tiles.getTileLocation(26, 23))
 tiles.placeOnTile(gem2, tiles.getTileLocation(54, 25))
+tiles.placeOnTile(ruby, tiles.getTileLocation(85, 22))
+tiles.placeOnTile(amulet, tiles.getTileLocation(1, 14))
+tiles.placeOnTile(voodoo_skull, tiles.getTileLocation(76, 11))
