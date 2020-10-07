@@ -34,7 +34,7 @@ def jump():
 controller.up.on_event(ControllerButtonEvent.PRESSED, jump)
 info.player1.set_life(1)
 game.show_long_text("Kill that birb", DialogLayout.BOTTOM)
-info.set_score(0)
+
 
 #Make the level
 scene.set_tile_map(img("""
@@ -361,7 +361,8 @@ boss_birb = sprites.create(img("""
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
 """),SpriteKind.enemy)
-projectile = sprites.create_projectile_from_sprite(img("""
+def on_update_interval():
+    projectile = sprites.create_projectile_from_sprite(img("""
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
@@ -378,10 +379,8 @@ projectile = sprites.create_projectile_from_sprite(img("""
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
-"""), boss_birb,-50, 0)
-projectile.set_flag(SpriteFlag.BOUNCE_ON_WALL, True)
-def on_update_interval():
-    pass
+    """), boss_birb,-50, 0)
+    projectile.set_flag(SpriteFlag.BOUNCE_ON_WALL, True)
 game.on_update_interval(500, on_update_interval)
 
 #Make the damage and stuff

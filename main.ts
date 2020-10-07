@@ -37,7 +37,6 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function jump() {
 })
 info.player1.setLife(1)
 game.showLongText("Kill that birb", DialogLayout.Bottom)
-info.setScore(0)
 // Make the level
 scene.setTileMap(img`
     bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
@@ -361,7 +360,8 @@ let boss_birb = sprites.create(img`
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
 `, SpriteKind.Enemy)
-let projectile = sprites.createProjectileFromSprite(img`
+game.onUpdateInterval(500, function on_update_interval() {
+    let projectile = sprites.createProjectileFromSprite(img`
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
@@ -378,10 +378,8 @@ let projectile = sprites.createProjectileFromSprite(img`
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
-`, boss_birb, -50, 0)
-projectile.setFlag(SpriteFlag.BounceOnWall, true)
-game.onUpdateInterval(500, function on_update_interval() {
-    
+    `, boss_birb, -50, 0)
+    projectile.setFlag(SpriteFlag.BounceOnWall, true)
 })
 // Make the damage and stuff
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function on_overlap(sprite: Sprite, otherSprite: Sprite) {
