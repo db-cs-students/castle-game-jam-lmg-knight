@@ -70,22 +70,22 @@ scene.set_tile_map(img("""
     bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb2bbbbb2bbbbbbbbbbbb2bbbbbbbbbbb
 """))
 scene.set_tile(11, img("""
-    f b b f b b b f b b f b b f b b
-    f b b f b b b f b b f b b f b b
     f f f f f f f f f f f f f f f f
-    b f b b f b f b b b b f b b f b
-    b f b b f b f b b b b f b b f b
-    b f b b f b f b b b b f b b f b
-    b f b b f b f b b b b f b b f b
+    f b b b b b f b b b b b b b b f
+    f b b b b b f f f f b b b b b f
+    f b b b b b f b b f b b b b b f
+    f f f f f f f b b f f f f f f f
+    f b b b f b b b b f b b f b b f
+    f b b b f b b b b f b b f b b f
+    f b b b f f f f f f b b f b b f
+    f b b b b b b f b b b b f f b f
+    f b b b b b b f b b b b b f b f
+    f f f f f f f f b b b b b f b f
+    f b b b b f b f b b b b b f f f
+    f b b b b f b f f f f f f f b f
+    f b b b b f b b b b b b b b b f
+    f b b b b f b b b b b b b b b f
     f f f f f f f f f f f f f f f f
-    f b b f b b b f b b f b b f b b
-    f b b f b b b f b b f b b f b b
-    f b b f b b b f b b f b b f b b
-    f b b f b b b f b b f b b f b b
-    f f f f f f f f f f f f f f f f
-    b f b b f b f b b b b f b b f b
-    b f b b f b f b b b b f b b f b
-    b f b b f b f b b b b f b b f b
 """),True)
 scene.set_tile(6, img("""
     . . . . . . . . . . . . . . . .
@@ -163,19 +163,19 @@ scene.set_tile(2, img("""
     . . 1 . . . 1 . . . 1 . . . 1 .
     . 1 2 1 . 1 2 1 . 1 2 1 . 1 2 1
     1 2 2 2 1 2 2 2 1 2 2 2 1 2 2 2
-    f b b f b f b b f b f b b f b b
-    f b b f b f b b f b f b b f b b
     f f f f f f f f f f f f f f f f
-    b f b b f b f b b f b f b b f b
-    b f b b f b f b b f b f b b f b
-    b f b b f b f b b f b f b b f b
-    b f b b f b f b b f b f b b f b
+    f b b b f b b b b b f b b b b f
+    f b b b f b b b b b f b b b b f
+    f b b b f f f f f f f b b b b f
+    f b b b f b b f f b b b b b b f
+    f f f f f b b f b b b b b b b f
+    f b b f b b b f b b b b b b b f
+    f b b f b b b f f f f f f f f f
+    f b b f f f f f b f b b b b b f
+    f b b b b b b b b f b b b b b f
+    f b b b b b b b b f b b b b b f
+    f b b b b b b b b f b b b b b f
     f f f f f f f f f f f f f f f f
-    f b b f b f b b f b f b b f b b
-    f b b f b f b b f b f b b f b b
-    f f f f f f f f f f f f f f f f
-    b b f b b b f b b f b f b b f b
-    b b f b b b f b b f b f b b f b
 """),True)
 scene.set_tile(10, img("""
     a 8 8 8 8 8 8 8 8 8 8 a a a a a
