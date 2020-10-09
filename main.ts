@@ -37,7 +37,7 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function jump() {
 })
 info.player1.setLife(1)
 game.showLongText("Just a friendly reminder that this game is still in development! I will be constantly working on this project and trying to make it better for you. Thanks, Dev.", DialogLayout.Bottom)
-game.showLongText("You have fallen into an evil dungeon full of dangerous monsters.You must throw your swords(spacebar) and move with the arrow keys. to defeat them. There are also a few treasures hidden around. Find them for the secret ending. Enjoy!", DialogLayout.Bottom)
+game.showLongText("You have fallen into an evil dungeon full of dangerous monsters.You must throw your swords(spacebar) and move with the arrow keys to defeat them. There are also a few treasures hidden around. Find them for the secret ending. Enjoy!", DialogLayout.Bottom)
 info.setScore(0)
 // Make the level
 scene.setTileMap(img`
@@ -323,7 +323,7 @@ let jesters_mask = sprites.create(img`
     . . . . . f f 2 f 2 2 . . . . .
     . . . . . f f f 2 2 2 . . . . .
     . . . . . . . . . . . . . . . .
-`, SpriteKind.Enemy)
+    `, SpriteKind.Enemy)
 jesters_mask.follow(Knight, 35)
 let lost_one = sprites.create(img`
     . . . 4 . . . . . 2 . 4 4 . . .
@@ -344,45 +344,24 @@ let lost_one = sprites.create(img`
     . . . . . . . . . . . . . . . .
 `, SpriteKind.Enemy)
 lost_one.follow(Knight, 40)
-let boss_birb = sprites.create(img`
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . f f f f f . .
-    . . . . . . . . f d d d d d f .
-    . . . . . . . f d d d d d d f .
-    . . . . . . f d d d d d d f . .
-    . . . . . f d d d d d d f . . .
-    . . . . f f f f f f f f f . . .
-    . . . f d d d d d d d d d f . .
-    . f f d 2 d d d d d d d d d f .
-    f 4 4 d d d d d d d d d d d f .
-    . f f f f f f f f f f f f f . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-`, SpriteKind.Enemy)
-game.onUpdateInterval(500, function on_update_interval() {
-    let projectile = sprites.createProjectileFromSprite(img`
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . e . . . . . . . . .
-    . . . . e . e 4 4 4 . . . . . .
-    . . . . . e e 4 4 4 . . . . . .
-    . . . . . . e 4 4 4 . . . . . .
-    . . . . . . e . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . . . . . . . . . . . .
-    `, boss_birb, -50, 0)
-    projectile.setFlag(SpriteFlag.BounceOnWall, true)
-})
+let my_sprite = sprites.create(img`
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+. . . . . . . . . . . . . . . .
+`)
 // Make the damage and stuff
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function on_overlap(sprite: Sprite, otherSprite: Sprite) {
     otherSprite.destroy()
@@ -495,4 +474,5 @@ tiles.placeOnTile(ruby, tiles.getTileLocation(85, 22))
 tiles.placeOnTile(amulet, tiles.getTileLocation(1, 14))
 tiles.placeOnTile(voodoo_skull, tiles.getTileLocation(43, 6))
 tiles.placeOnTile(lost_one, tiles.getTileLocation(6, 23))
-tiles.placeOnTile(boss_birb, tiles.getTileLocation(93, 16))
+tiles.placeOnTile(my_sprite, tiles.getTileLocation(93, 16))
+tiles.placeOnTile(null, tiles.getTileLocation(0, 0))
