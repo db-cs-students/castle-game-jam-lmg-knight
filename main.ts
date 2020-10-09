@@ -36,7 +36,7 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function jump() {
     
 })
 info.player1.setLife(1)
-game.showLongText("Kill that birb", DialogLayout.Bottom)
+game.showLongText("You have fallen into an evil dungeon full of dangerous monsters. You must throw your swords(spacebar) to defeat them. There are also a few treasures hidden around. Find them for the secret ending. Enjoy!", DialogLayout.Bottom)
 // Make the level
 scene.setTileMap(img`
     bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb

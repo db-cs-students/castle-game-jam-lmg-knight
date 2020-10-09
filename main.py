@@ -33,8 +33,7 @@ def jump():
         can_jump = Knight.is_hitting_tile(CollisionDirection.BOTTOM)
 controller.up.on_event(ControllerButtonEvent.PRESSED, jump)
 info.player1.set_life(1)
-game.show_long_text("Kill that birb", DialogLayout.BOTTOM)
-
+game.show_long_text("You have fallen into an evil dungeon full of dangerous monsters. You must throw your swords(spacebar) to defeat them. There are also a few treasures hidden around. Find them for the secret ending. Enjoy!", DialogLayout.BOTTOM)
 
 #Make the level
 scene.set_tile_map(img("""
