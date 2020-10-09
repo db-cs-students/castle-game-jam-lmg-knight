@@ -34,6 +34,7 @@ def jump():
 controller.up.on_event(ControllerButtonEvent.PRESSED, jump)
 info.player1.set_life(1)
 game.show_long_text("You have fallen into an evil dungeon full of dangerous monsters. You must throw your swords(spacebar) to defeat them. There are also a few treasures hidden around. Find them for the secret ending. Enjoy!", DialogLayout.BOTTOM)
+info.set_score(0)
 
 #Make the level
 scene.set_tile_map(img("""
@@ -484,6 +485,7 @@ ruby = sprites.create(img("""
 """),SpriteKind.food)
 def on_overlap2(sprite, otherSprite):
       otherSprite.destroy()
+      info.player1.change_score_by(1)
 sprites.on_overlap(SpriteKind.player, SpriteKind.food, on_overlap2)
 
 #set stuff places

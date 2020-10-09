@@ -37,6 +37,7 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function jump() {
 })
 info.player1.setLife(1)
 game.showLongText("You have fallen into an evil dungeon full of dangerous monsters. You must throw your swords(spacebar) to defeat them. There are also a few treasures hidden around. Find them for the secret ending. Enjoy!", DialogLayout.Bottom)
+info.setScore(0)
 // Make the level
 scene.setTileMap(img`
     bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
@@ -482,6 +483,7 @@ let ruby = sprites.create(img`
 `, SpriteKind.Food)
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function on_overlap2(sprite: Sprite, otherSprite: Sprite) {
     otherSprite.destroy()
+    info.player1.changeScoreBy(1)
 })
 // set stuff places
 tiles.placeOnTile(jesters_mask, tiles.getTileLocation(54, 15))
