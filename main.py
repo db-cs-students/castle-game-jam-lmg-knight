@@ -33,7 +33,7 @@ def jump():
         can_jump = Knight.is_hitting_tile(CollisionDirection.BOTTOM)
 controller.up.on_event(ControllerButtonEvent.PRESSED, jump)
 info.player1.set_life(1)
-game.show_long_text("Just a friendly reminder that this game is still in development! I will be constantly working on this project and trying to make it better for you. Thanks, Dev.",DialogLayout.BOTTOM)
+game.show_long_text("Just a friendly reminder that this game is still early in development! I will be constantly working on this project and trying to make it better for you. Thanks, Dev.",DialogLayout.BOTTOM)
 game.show_long_text("You have fallen into an evil dungeon full of dangerous monsters.You must throw your swords(spacebar) and move with the arrow keys to defeat them. There are also a few treasures hidden around. Find them for the secret ending. Enjoy!", DialogLayout.BOTTOM)
 info.set_score(0)
 

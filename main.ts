@@ -36,7 +36,7 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function jump() {
     
 })
 info.player1.setLife(1)
-game.showLongText("Just a friendly reminder that this game is still in development! I will be constantly working on this project and trying to make it better for you. Thanks, Dev.", DialogLayout.Bottom)
+game.showLongText("Just a friendly reminder that this game is still early in development! I will be constantly working on this project and trying to make it better for you. Thanks, Dev.", DialogLayout.Bottom)
 game.showLongText("You have fallen into an evil dungeon full of dangerous monsters.You must throw your swords(spacebar) and move with the arrow keys to defeat them. There are also a few treasures hidden around. Find them for the secret ending. Enjoy!", DialogLayout.Bottom)
 info.setScore(0)
 // Make the level
