@@ -33,7 +33,8 @@ def jump():
         can_jump = Knight.is_hitting_tile(CollisionDirection.BOTTOM)
 controller.up.on_event(ControllerButtonEvent.PRESSED, jump)
 info.player1.set_life(1)
-game.show_long_text("You have fallen into an evil dungeon full of dangerous monsters. You must throw your swords(spacebar) to defeat them. There are also a few treasures hidden around. Find them for the secret ending. Enjoy!", DialogLayout.BOTTOM)
+game.show_long_text("Just a friendly reminder that this game is still in development! I will be constantly working on this project and trying to make it better for you. Thanks, Dev.",DialogLayout.BOTTOM)
+game.show_long_text("You have fallen into an evil dungeon full of dangerous monsters.You must throw your swords(spacebar) and move with the arrow keys. to defeat them. There are also a few treasures hidden around. Find them for the secret ending. Enjoy!", DialogLayout.BOTTOM)
 info.set_score(0)
 
 #Make the level
@@ -288,18 +289,18 @@ game.on_update(on_update)
 #make enemy
 voodoo_skull = sprites.create(img("""
     . . . . 2 2 2 2 2 2 2 . . . . .
-    . . . 2 . . . . . . . 2 . . . .
-    . . 2 . . . . . . . . . 2 . . .
-    . . 2 . . . . . . . . . 2 . . .
-    . . 2 . . 1 . . . 1 . . 2 . . .
-    . . 2 . 1 . 1 . 1 . 1 . 2 . . .
-    . . 2 . . 1 . . . 1 . . 2 . . .
-    . . 2 . . . . 1 . . . . 2 . . .
-    . . 2 . . . 1 . 1 . . . 2 . . .
-    . . . 2 . . . . . . . 2 . . . .
+    . . . 2 2 2 2 2 2 2 2 2 . . . .
+    . . 2 2 2 2 2 2 2 2 2 2 2 . . .
+    . . 2 2 2 2 2 2 2 2 2 2 2 . . .
+    . . 2 2 2 1 2 2 2 1 2 2 2 . . .
+    . . 2 2 1 2 1 2 1 2 1 2 2 . . .
+    . . 2 2 2 1 2 2 2 1 2 2 2 . . .
+    . . 2 2 2 2 2 1 2 2 2 2 2 . . .
+    . . 2 2 2 2 1 2 1 2 2 2 2 . . .
+    . . . 2 2 2 2 2 2 2 2 2 . . . .
     . . . . 2 2 2 2 2 2 2 . . . . .
-    . . . . . 2 1 1 1 2 . . . . . .
-    . . . . . 2 1 1 1 2 . . . . . .
+    . . . . . 2 1 2 1 2 . . . . . .
+    . . . . . 2 1 2 1 2 . . . . . .
     . . . . . 2 2 2 2 2 . . . . . .
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
@@ -330,16 +331,16 @@ lost_one = sprites.create(img("""
     . . 4 4 4 2 4 4 4 4 2 4 . 2 . .
     . . 4 4 4 4 4 4 4 4 4 4 4 . . .
     . . 2 4 2 2 2 2 2 2 2 4 4 . . .
-    . . 4 2 . . . . . . . 2 4 . . .
-    . . 4 . . . . . . . . . 2 . . .
-    . . 2 . 1 1 1 . 1 1 1 . 2 . . .
-    . . 2 . 1 1 1 . 1 1 1 . 2 . . .
-    . . 2 . 1 1 1 . 1 1 1 . 2 . . .
-    . . 2 . . . . . . . . . 2 . . .
-    . . 2 . . . 1 1 1 . . . 2 . . .
-    . . 2 . . 1 1 . 1 1 . . 2 . . .
-    . . . 2 . . . . . . . 2 . . . .
-    . . . . 2 2 2 2 2 2 2 . . . . .
+    . . 4 2 2 2 2 2 2 2 2 2 4 . . .
+    . . 4 2 2 2 2 5 2 2 2 2 2 . . .
+    . . 2 2 1 1 1 2 1 1 1 2 5 . . .
+    . . 5 2 1 1 1 2 1 1 1 2 2 . . .
+    . . 2 2 1 1 1 5 1 1 1 5 2 . . .
+    . . 2 5 5 5 5 5 5 5 5 5 5 . . .
+    . . 5 5 5 5 1 1 1 5 5 5 5 . . .
+    . . 5 5 5 1 5 5 5 1 5 5 5 . . .
+    . . . 5 5 5 5 5 5 5 5 5 . . . .
+    . . . . 5 5 5 5 5 5 5 . . . . .
     . . . . . . . . . . . . . . . .
 """),SpriteKind.enemy)
 lost_one.follow(Knight, 40)
@@ -436,11 +437,11 @@ gem2 = sprites.create(img("""
     . . . . . . . . . . . . . . . .
     . . . . . a a a a a a . . . . .
     . . . . a a a a a a a a . . . .
-    . . . a a c c c c c c a a . . .
-    . . . a c c c c c c c c a . . .
-    . . . a c c c c c c c c a . . .
-    . . . a c c c c c c c c a . . .
-    . . . a a c c c c c c a a . . .
+    . . . a a 1 1 c c c c a a . . .
+    . . . a c 1 c c c c c c a . . .
+    . . . a c c c c c c c 1 a . . .
+    . . . a c c c c c c c 1 a . . .
+    . . . a a c c c c 1 1 a a . . .
     . . . . a a a a a a a a . . . .
     . . . . . a a a a a a . . . . .
     . . . . . . . . . . . . . . . .
