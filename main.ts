@@ -65,7 +65,7 @@ scene.setTileMap(img`
     b..........b.........b.........bbb.............................................b6..........bbbb....b
     b...........b........b.........bbbb............................................b...........b.......b
     b...........bbbbbbb..b.........bbbbb...........bbbbbb2bbbb2bbbbbb..b...........b...........b....bbbb
-    b...................bb.........bbbb............b................b..b...........b...........b.......b
+    b...................bb.........bbbb............b................b..b...........b..........4b.......b
     b..................bbb.........bbb....bbbbbbbb.b................b..b...bbbb....b..bbbbbbbbbbbbb....b
     b.......bbbbbbbbbbbbbb...bbbbbbbb....bb6.......b....bbbbbbbbbbbbb..b...........b..................bb
     b......b.............bb.............b.........bbb.............................bbb................bbb
@@ -144,24 +144,6 @@ scene.setTile(14, img`
     . . . . e e e e e e e e e . . .
     . . . . e e e e e e e e e . . .
 `)
-scene.setTile(8, img`
-    a a a a a a a a a a a a a a a a
-    8 8 8 a 8 8 8 8 a 8 8 8 8 8 8 a
-    8 8 8 a 8 8 8 8 a 8 8 8 8 8 8 a
-    8 8 8 a 8 8 8 a 8 8 8 8 8 8 8 a
-    8 8 a a 8 8 8 a 8 8 8 8 8 8 8 a
-    8 8 a 8 8 a a 8 8 8 8 8 8 8 8 a
-    8 a 8 8 8 a 8 8 8 8 8 8 a a a a
-    8 a 8 8 8 a 8 8 8 8 8 a a 8 8 a
-    a a 8 8 a 8 8 8 8 8 a a 8 8 8 a
-    a 8 8 8 a 8 8 8 8 a a 8 8 8 8 a
-    a 8 8 a 8 8 8 8 a a 8 8 8 8 8 a
-    a 8 a a 8 8 8 a a 8 8 8 8 8 8 a
-    a 8 a 8 8 a a 8 8 8 8 8 8 8 8 a
-    8 a a 8 a a 8 8 8 8 8 8 8 8 8 a
-    a a a a a 8 8 8 8 8 8 8 8 8 8 a
-    a a 8 8 8 8 8 8 8 8 8 8 8 8 8 a
-`)
 scene.setTile(2, img`
     . . 1 . . . 1 . . . 1 . . . 1 .
     . 1 2 1 . 1 2 1 . 1 2 1 . 1 2 1
@@ -180,58 +162,22 @@ scene.setTile(2, img`
     f b b b b b b b b f b b b b b f
     f f f f f f f f f f f f f f f f
 `, true)
-scene.setTile(10, img`
-    a 8 8 8 8 8 8 8 8 8 8 a a a a a
-    a 8 8 8 8 a a a a a a 8 8 8 a a
-    a a 8 a a a 8 8 8 8 8 8 a a a 8
-    a a a a 8 8 8 8 8 8 a a a 8 a 8
-    a 8 8 8 8 8 8 8 8 8 a 8 8 8 a 8
-    a 8 8 8 8 8 8 8 a a 8 8 8 8 a 8
-    a 8 8 8 8 8 8 8 a 8 8 8 8 8 a 8
-    a 8 8 8 8 8 8 a 8 8 8 8 8 8 a 8
-    a 8 8 8 8 8 a 8 8 8 8 8 8 8 a 8
-    a 8 8 8 8 a a 8 8 8 8 8 8 8 a 8
-    a 8 8 8 8 a 8 8 8 8 8 8 8 8 a a
-    a 8 8 8 a a 8 8 8 8 8 8 8 8 8 a
-    a 8 8 8 a 8 8 8 8 8 8 8 8 8 8 a
-    a 8 8 a a 8 8 8 8 8 8 8 8 8 8 a
-    a 8 a a 8 8 8 8 8 8 8 8 8 8 8 a
-    a a a a a a a a a a a a a a a a
-`)
 scene.setTile(4, img`
     a a a a a a a a a a a a a a a a
-    a 8 8 8 8 8 a 8 8 8 a a a 8 8 8
-    a 8 8 8 8 a a 8 8 8 8 a 8 8 8 8
-    a 8 8 8 8 a a 8 8 8 8 a 8 8 8 8
-    a 8 8 8 8 8 a 8 8 8 8 8 a 8 8 8
-    a 8 8 8 8 8 a 8 8 8 8 8 a a 8 8
-    a 8 8 8 8 8 a 8 8 8 8 8 8 a 8 8
-    a 8 8 8 8 8 8 a 8 8 8 8 8 a 8 8
-    a a 8 8 8 8 8 a a 8 8 8 8 a a 8
-    a a a a 8 8 8 8 a a 8 8 8 8 a 8
-    a 8 8 a a a 8 8 8 8 a 8 8 8 a a
-    a 8 8 8 8 a a a 8 8 8 a 8 8 8 a
-    a 8 8 8 8 8 8 a a 8 8 a a 8 8 a
-    a 8 8 8 8 8 8 8 a a a 8 a a 8 a
-    a 8 8 a a a a a a a a a a a a a
-    a a a a 8 8 8 8 8 8 8 8 8 8 a a
-`)
-scene.setTile(7, img`
-    a a 8 8 8 8 8 8 8 8 8 8 8 8 8 a
-    a a a a a a a a 8 8 8 8 8 8 8 a
-    8 a a a 8 8 8 8 a a 8 8 8 8 8 a
-    8 a 8 a a 8 8 8 8 a a 8 8 8 8 a
-    8 a 8 8 a 8 8 8 8 8 a 8 8 8 8 a
-    8 a 8 8 a a a 8 8 8 a a 8 8 a a
-    8 a 8 8 8 8 a a 8 8 8 a a a a a
-    8 a 8 8 8 8 8 a a 8 8 8 8 8 8 a
-    8 a 8 8 8 8 8 8 a a a 8 8 8 8 a
-    8 a a 8 8 a 8 8 8 8 a a 8 8 8 a
-    8 8 a 8 8 a a 8 8 8 8 a a 8 8 a
-    8 8 a a 8 8 8 8 8 8 8 8 a 8 8 a
-    8 8 8 a 8 8 8 8 8 8 8 8 a a a a
-    8 8 8 a a 8 8 8 8 8 8 8 8 a a a
-    8 8 8 a a 8 8 8 8 8 8 8 8 8 8 a
+    a 8 a 8 8 8 8 8 8 8 8 8 8 8 8 a
+    a 8 a a a a 8 8 8 8 8 8 8 8 a a
+    a 8 8 8 8 a 8 8 a a a 8 8 8 a a
+    a 8 8 8 8 a 8 8 a 8 a a a a a a
+    a 8 8 8 8 a 8 8 a 8 8 8 8 8 8 a
+    a 8 8 8 8 a a a a 8 8 8 8 8 8 a
+    a 8 8 8 8 8 a a a a a a a 8 8 a
+    a 8 8 8 8 a a a a 8 8 8 a 8 8 a
+    a 8 8 8 8 8 8 a 8 8 8 8 a 8 8 a
+    a 8 8 8 8 8 8 a 8 8 8 8 a 8 8 a
+    a 8 8 8 8 a a a 8 8 8 8 a 8 8 a
+    a 8 8 8 a a 8 8 8 8 8 a a 8 8 a
+    a 8 a a a 8 8 8 8 8 8 a a 8 8 a
+    a a a 8 8 8 8 8 8 8 8 a 8 8 8 a
     a a a a a a a a a a a a a a a a
 `)
 // Make life losing system
@@ -344,24 +290,25 @@ let lost_one = sprites.create(img`
     . . . . . . . . . . . . . . . .
 `, SpriteKind.Enemy)
 lost_one.follow(Knight, 40)
-let my_sprite = sprites.create(img`
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-`)
+let yes = sprites.create(img`
+    . . . . . . . . . . . . . . . .
+    . . . c c c c . . c c c c . . .
+    . . c . . . . . . . . . . c . .
+    . c . . . a a a a a a . . . c .
+    . c . . a c c c c c c a . . c .
+    . c . a c c c c c c c c a . c .
+    . c . a c c c c c c c c a . c .
+    . c . a c c c c c c c c a . c .
+    . c . a c c c c c c c c a . c .
+    . c . a c c c c c c c c a . c .
+    . c . a c c c c c c c c a . c .
+    . c . . a c c c c c c a . . c .
+    . c . . . a a a a a a . . . c .
+    . . c . . . . . . . . . . c . .
+    . . . c c c c . . c c c c . . .
+    . . . . . . . . . . . . . . . .
+`, SpriteKind.Enemy)
+yes.follow(Knight, 55)
 // Make the damage and stuff
 sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function on_overlap(sprite: Sprite, otherSprite: Sprite) {
     otherSprite.destroy()
@@ -474,5 +421,10 @@ tiles.placeOnTile(ruby, tiles.getTileLocation(85, 22))
 tiles.placeOnTile(amulet, tiles.getTileLocation(1, 14))
 tiles.placeOnTile(voodoo_skull, tiles.getTileLocation(43, 6))
 tiles.placeOnTile(lost_one, tiles.getTileLocation(6, 23))
-tiles.placeOnTile(my_sprite, tiles.getTileLocation(93, 16))
+tiles.placeOnTile(yes, tiles.getTileLocation(93, 16))
 tiles.placeOnTile(null, tiles.getTileLocation(0, 0))
+// Make the minimap
+// Make an end to level one and a beginning to level two
+scene.onOverlapTile(SpriteKind.Player, img` `, function on_overlap_tile(sprite: Sprite, location: tiles.Location) {
+    
+})

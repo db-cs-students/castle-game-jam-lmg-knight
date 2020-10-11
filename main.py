@@ -63,7 +63,7 @@ scene.set_tile_map(img("""
     b..........b.........b.........bbb.............................................b6..........bbbb....b
     b...........b........b.........bbbb............................................b...........b.......b
     b...........bbbbbbb..b.........bbbbb...........bbbbbb2bbbb2bbbbbb..b...........b...........b....bbbb
-    b...................bb.........bbbb............b................b..b...........b...........b.......b
+    b...................bb.........bbbb............b................b..b...........b..........4b.......b
     b..................bbb.........bbb....bbbbbbbb.b................b..b...bbbb....b..bbbbbbbbbbbbb....b
     b.......bbbbbbbbbbbbbb...bbbbbbbb....bb6.......b....bbbbbbbbbbbbb..b...........b..................bb
     b......b.............bb.............b.........bbb.............................bbb................bbb
@@ -142,24 +142,6 @@ scene.set_tile(14, img("""
     . . . . e e e e e e e e e . . .
     . . . . e e e e e e e e e . . .
 """))
-scene.set_tile(8, img("""
-    a a a a a a a a a a a a a a a a
-    8 8 8 a 8 8 8 8 a 8 8 8 8 8 8 a
-    8 8 8 a 8 8 8 8 a 8 8 8 8 8 8 a
-    8 8 8 a 8 8 8 a 8 8 8 8 8 8 8 a
-    8 8 a a 8 8 8 a 8 8 8 8 8 8 8 a
-    8 8 a 8 8 a a 8 8 8 8 8 8 8 8 a
-    8 a 8 8 8 a 8 8 8 8 8 8 a a a a
-    8 a 8 8 8 a 8 8 8 8 8 a a 8 8 a
-    a a 8 8 a 8 8 8 8 8 a a 8 8 8 a
-    a 8 8 8 a 8 8 8 8 a a 8 8 8 8 a
-    a 8 8 a 8 8 8 8 a a 8 8 8 8 8 a
-    a 8 a a 8 8 8 a a 8 8 8 8 8 8 a
-    a 8 a 8 8 a a 8 8 8 8 8 8 8 8 a
-    8 a a 8 a a 8 8 8 8 8 8 8 8 8 a
-    a a a a a 8 8 8 8 8 8 8 8 8 8 a
-    a a 8 8 8 8 8 8 8 8 8 8 8 8 8 a
-"""))
 scene.set_tile(2, img("""
     . . 1 . . . 1 . . . 1 . . . 1 .
     . 1 2 1 . 1 2 1 . 1 2 1 . 1 2 1
@@ -178,58 +160,22 @@ scene.set_tile(2, img("""
     f b b b b b b b b f b b b b b f
     f f f f f f f f f f f f f f f f
 """),True)
-scene.set_tile(10, img("""
-    a 8 8 8 8 8 8 8 8 8 8 a a a a a
-    a 8 8 8 8 a a a a a a 8 8 8 a a
-    a a 8 a a a 8 8 8 8 8 8 a a a 8
-    a a a a 8 8 8 8 8 8 a a a 8 a 8
-    a 8 8 8 8 8 8 8 8 8 a 8 8 8 a 8
-    a 8 8 8 8 8 8 8 a a 8 8 8 8 a 8
-    a 8 8 8 8 8 8 8 a 8 8 8 8 8 a 8
-    a 8 8 8 8 8 8 a 8 8 8 8 8 8 a 8
-    a 8 8 8 8 8 a 8 8 8 8 8 8 8 a 8
-    a 8 8 8 8 a a 8 8 8 8 8 8 8 a 8
-    a 8 8 8 8 a 8 8 8 8 8 8 8 8 a a
-    a 8 8 8 a a 8 8 8 8 8 8 8 8 8 a
-    a 8 8 8 a 8 8 8 8 8 8 8 8 8 8 a
-    a 8 8 a a 8 8 8 8 8 8 8 8 8 8 a
-    a 8 a a 8 8 8 8 8 8 8 8 8 8 8 a
-    a a a a a a a a a a a a a a a a
-"""))
 scene.set_tile(4, img("""
     a a a a a a a a a a a a a a a a
-    a 8 8 8 8 8 a 8 8 8 a a a 8 8 8
-    a 8 8 8 8 a a 8 8 8 8 a 8 8 8 8
-    a 8 8 8 8 a a 8 8 8 8 a 8 8 8 8
-    a 8 8 8 8 8 a 8 8 8 8 8 a 8 8 8
-    a 8 8 8 8 8 a 8 8 8 8 8 a a 8 8
-    a 8 8 8 8 8 a 8 8 8 8 8 8 a 8 8
-    a 8 8 8 8 8 8 a 8 8 8 8 8 a 8 8
-    a a 8 8 8 8 8 a a 8 8 8 8 a a 8
-    a a a a 8 8 8 8 a a 8 8 8 8 a 8
-    a 8 8 a a a 8 8 8 8 a 8 8 8 a a
-    a 8 8 8 8 a a a 8 8 8 a 8 8 8 a
-    a 8 8 8 8 8 8 a a 8 8 a a 8 8 a
-    a 8 8 8 8 8 8 8 a a a 8 a a 8 a
-    a 8 8 a a a a a a a a a a a a a
-    a a a a 8 8 8 8 8 8 8 8 8 8 a a
-"""))
-scene.set_tile(7, img("""
-    a a 8 8 8 8 8 8 8 8 8 8 8 8 8 a
-    a a a a a a a a 8 8 8 8 8 8 8 a
-    8 a a a 8 8 8 8 a a 8 8 8 8 8 a
-    8 a 8 a a 8 8 8 8 a a 8 8 8 8 a
-    8 a 8 8 a 8 8 8 8 8 a 8 8 8 8 a
-    8 a 8 8 a a a 8 8 8 a a 8 8 a a
-    8 a 8 8 8 8 a a 8 8 8 a a a a a
-    8 a 8 8 8 8 8 a a 8 8 8 8 8 8 a
-    8 a 8 8 8 8 8 8 a a a 8 8 8 8 a
-    8 a a 8 8 a 8 8 8 8 a a 8 8 8 a
-    8 8 a 8 8 a a 8 8 8 8 a a 8 8 a
-    8 8 a a 8 8 8 8 8 8 8 8 a 8 8 a
-    8 8 8 a 8 8 8 8 8 8 8 8 a a a a
-    8 8 8 a a 8 8 8 8 8 8 8 8 a a a
-    8 8 8 a a 8 8 8 8 8 8 8 8 8 8 a
+    a 8 a 8 8 8 8 8 8 8 8 8 8 8 8 a
+    a 8 a a a a 8 8 8 8 8 8 8 8 a a
+    a 8 8 8 8 a 8 8 a a a 8 8 8 a a
+    a 8 8 8 8 a 8 8 a 8 a a a a a a
+    a 8 8 8 8 a 8 8 a 8 8 8 8 8 8 a
+    a 8 8 8 8 a a a a 8 8 8 8 8 8 a
+    a 8 8 8 8 8 a a a a a a a 8 8 a
+    a 8 8 8 8 a a a a 8 8 8 a 8 8 a
+    a 8 8 8 8 8 8 a 8 8 8 8 a 8 8 a
+    a 8 8 8 8 8 8 a 8 8 8 8 a 8 8 a
+    a 8 8 8 8 a a a 8 8 8 8 a 8 8 a
+    a 8 8 8 a a 8 8 8 8 8 a a 8 8 a
+    a 8 a a a 8 8 8 8 8 8 a a 8 8 a
+    a a a 8 8 8 8 8 8 8 8 a 8 8 8 a
     a a a a a a a a a a a a a a a a
 """))
 
@@ -344,24 +290,25 @@ lost_one = sprites.create(img("""
     . . . . . . . . . . . . . . . .
 """),SpriteKind.enemy)
 lost_one.follow(Knight, 40)
-my_sprite = sprites.create(img("""
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-. . . . . . . . . . . . . . . .
-"""))
+yes = sprites.create(img("""
+    . . . . . . . . . . . . . . . .
+    . . . c c c c . . c c c c . . .
+    . . c . . . . . . . . . . c . .
+    . c . . . a a a a a a . . . c .
+    . c . . a c c c c c c a . . c .
+    . c . a c c c c c c c c a . c .
+    . c . a c c c c c c c c a . c .
+    . c . a c c c c c c c c a . c .
+    . c . a c c c c c c c c a . c .
+    . c . a c c c c c c c c a . c .
+    . c . a c c c c c c c c a . c .
+    . c . . a c c c c c c a . . c .
+    . c . . . a a a a a a . . . c .
+    . . c . . . . . . . . . . c . .
+    . . . c c c c . . c c c c . . .
+    . . . . . . . . . . . . . . . .
+"""),SpriteKind.enemy)
+yes.follow(Knight , 55)
 
 #Make the damage and stuff
 def on_overlap(sprite, otherSprite):
@@ -477,11 +424,14 @@ tiles.place_on_tile(ruby, tiles.get_tile_location(85, 22))
 tiles.place_on_tile(amulet, tiles.get_tile_location(1, 14))
 tiles.place_on_tile(voodoo_skull, tiles.get_tile_location(43, 6))
 tiles.place_on_tile(lost_one, tiles.get_tile_location(6, 23))
-tiles.place_on_tile(my_sprite, tiles.get_tile_location(93, 16))
+tiles.place_on_tile(yes, tiles.get_tile_location(93, 16))
 tiles.place_on_tile(None, tiles.get_tile_location(0, 0))
 #Make the minimap
 
 
-#Make an end to level one
+#Make an end to level one and a beginning to level two
+def on_overlap_tile(sprite, location):
+    pass
+scene.on_overlap_tile(SpriteKind.player, img(""" """), on_overlap_tile)
 
     
