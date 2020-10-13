@@ -5,22 +5,26 @@ Description : You're a Knight going on a crusade to kill the dragon
 """
 #Make the player, camera, and controls
 Knight = sprites.create(img("""
-    . . . . . 1 1 1 1 1 . . . . . .
-    . . . . 1 1 1 1 1 1 1 . . . . .
-    . . . . 1 . . . . . 1 . . . . .
-    . . . . 1 1 1 1 1 1 1 . . . . .
-    . . . . 1 . 1 . 1 . 1 . . . . .
-    . . . . 1 1 . 1 . 1 1 . . . . .
-    . . . . . 1 1 1 1 1 . . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . 1 1 2 2 2 1 1 . . . . .
-    . . . . 1 2 2 1 2 2 1 . . . . .
-    . . . . 1 2 1 1 1 2 1 . . . . .
-    . . . . 1 2 2 1 2 2 1 . . . . .
-    . . 1 . 1 1 2 1 2 1 1 . 1 . . .
-    . . . . 1 1 2 2 2 1 1 . . . . .
-    . . . . . . . . . . . . . . . .
-    . . . . . 1 . . . 1 . . . . . .
+    ......cccccc....
+    .....cbbbbbbc...
+    ..ccccbbccccccc.
+    .ceeecbbc2b2b2c.
+    ceeeecbbcb2b2bc.
+    ceeeecbbccccccc.
+    ceeeecbbbbbbc...
+    ceeeeeccccccc...
+    ceeeeeeeeeeec...
+    ceeeeecccccc....
+    ceeeecbbbbbbc...
+    ceeeecbbbbbbc...
+    cebbecbbbbbbc.bb
+    .cbbecbbbbbbc.bb
+    .cbbecbbbbbbc.bb
+    ..ceecbbbbbbc...
+    ...ccccccccc....
+    ................
+    .....cc....cc...
+    .....cc....cc...
 """),SpriteKind.player)
 controller.move_sprite(Knight, 75, 0)
 scene.camera_follow_sprite(Knight)
@@ -194,11 +198,11 @@ def on_button_event_a_pressed():
         . . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . b 1 1 1 1 1 1 . . . .
-        . . . b b 8 1 1 1 1 1 1 1 . . .
-        . . . . . b 1 1 1 1 1 1 . . . .
-        . . . . . . . . . . . . . . . .
+        . . . . . . c c c c c c c . . .
+        . . . . . c 1 1 1 1 1 1 1 c . .
+        . . . c c 2 1 1 1 1 1 1 1 1 c .
+        . . . . . c 1 1 1 1 1 1 1 c . .
+        . . . . . . c c c c c c c . . .
         . . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . .
@@ -211,11 +215,11 @@ def on_button_event_a_pressed():
         . . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . .
-        . . . . . . . . . . . . . . . .
-        . . . . . 1 1 1 1 1 1 b . . . .
-        . . . . 1 1 1 1 1 1 1 8 b b . .
-        . . . . . 1 1 1 1 1 1 b . . . .
-        . . . . . . . . . . . . . . . .
+        . . . . c c c c c c c . . . . .
+        . . . c 1 1 1 1 1 1 1 c . . . .
+        . . c 1 1 1 1 1 1 1 1 2 c c . .
+        . . . c 1 1 1 1 1 1 1 c . . . .
+        . . . . c c c c c c c . . . . .
         . . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . .
@@ -309,6 +313,24 @@ yes = sprites.create(img("""
     . . . . . . . . . . . . . . . .
 """),SpriteKind.enemy)
 yes.follow(Knight , 55)
+my_sprite2 = sprites.create(img("""
+    . . . . . . . . . . . . . . . .
+    . . . . . 2 2 2 2 2 2 2 . . . .
+    . . . . 2 2 1 2 2 1 1 1 2 . . .
+    . . . 2 2 1 1 1 2 1 1 1 2 2 . .
+    . . 2 2 2 1 1 1 2 1 1 1 2 2 2 .
+    . . 2 2 2 1 1 1 2 1 1 1 2 2 2 .
+    . . 2 2 2 1 1 1 2 1 1 1 2 2 2 .
+    . . 2 2 2 1 2 1 2 1 1 1 2 2 2 .
+    . . 2 2 2 2 2 2 2 2 2 2 2 2 2 .
+    . . 2 2 1 2 2 2 2 2 2 2 1 2 2 .
+    . . 2 2 1 1 1 1 1 1 1 1 1 2 2 .
+    . . . 2 2 1 1 1 1 1 1 1 2 2 . .
+    . . . . 2 2 1 1 1 1 1 2 2 . . .
+    . . . . . 2 2 2 2 2 2 2 . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+"""))
 
 #Make the damage and stuff
 def on_overlap(sprite, otherSprite):
