@@ -72,20 +72,20 @@ scene.set_tile_map(img("""
 """))
 scene.set_tile(11, img("""
     f f f f f f f f f f f f f f f f
-    f b b b b b f b b b b b b b b f
-    f b b b b b f f f f b b b b b f
-    f b b b b b f b b f b b b b b f
-    f f f f f f f b b f f f f f f f
-    f b b b f b b b b f b b f b b f
-    f b b b f b b b b f b b f b b f
-    f b b b f f f f f f b b f b b f
-    f b b b b b b f b b b b f f b f
-    f b b b b b b f b b b b b f b f
-    f f f f f f f f b b b b b f b f
-    f b b b b f b f b b b b b f f f
-    f b b b b f b f f f f f f f b f
-    f b b b b f b b b b b b b b b f
-    f b b b b f b b b b b b b b b f
+    f c c c c c f c c c c c c c c f
+    f c c c c c f f f f c c c c c f
+    f c c c c c f c c f c c c c c f
+    f f f f f f f c c f f f f f f f
+    f c c c f c c c c f c c f c c f
+    f c c c f c c c c f c c f c c f
+    f c c c f f f f f f c c f c c f
+    f c c c c c c f c c c c f f c f
+    f c c c c c c f c c c c c f c f
+    f f f f f f f f c c c c c f c f
+    f c c c c f c f c c c c c f f f
+    f c c c c f c f f f f f f f c f
+    f c c c c f c c c c c c c c c f
+    f c c c c f c c c c c c c c c f
     f f f f f f f f f f f f f f f f
 """),True)
 scene.set_tile(6, img("""
@@ -143,21 +143,21 @@ scene.set_tile(14, img("""
     . . . . e e e e e e e e e . . .
 """))
 scene.set_tile(2, img("""
-    . . 1 . . . 1 . . . 1 . . . 1 .
-    . 1 2 1 . 1 2 1 . 1 2 1 . 1 2 1
-    1 2 2 2 1 2 2 2 1 2 2 2 1 2 2 2
+    . . . . . . . . . . . . . . . .
+    . 1 1 . 1 1 . 1 1 . 1 1 . 1 1 .
+    1 2 2 1 2 2 1 2 2 1 2 2 1 2 2 1
     f f f f f f f f f f f f f f f f
-    f b b b f b b b b b f b b b b f
-    f b b b f b b b b b f b b b b f
-    f b b b f f f f f f f b b b b f
-    f b b b f b b f f b b b b b b f
-    f f f f f b b f b b b b b b b f
-    f b b f b b b f b b b b b b b f
-    f b b f b b b f f f f f f f f f
-    f b b f f f f f b f b b b b b f
-    f b b b b b b b b f b b b b b f
-    f b b b b b b b b f b b b b b f
-    f b b b b b b b b f b b b b b f
+    f c c c f c c c c c f c c c c c
+    f c c c f c c c c c f c c c c c
+    f c c c f f f f f f f f f c c c
+    f c c c f c c f f c c c f f f f
+    f f f f f c c f c c c c f c c c
+    f c c f c c c f c c c c f c c c
+    f c c f c c c f f f f f f f f f
+    f c c f f f f f c f c c c c c c
+    f c c c c c c c c f c c c c c c
+    f c c c c c c c c f c c c c c c
+    f c c c c c c c c f c c c c c c
     f f f f f f f f f f f f f f f f
 """),True)
 scene.set_tile(4, img("""
@@ -196,7 +196,7 @@ def on_button_event_a_pressed():
         . . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . .
         . . . . . b 1 1 1 1 1 1 . . . .
-        . . . b b 2 1 1 1 1 1 1 1 . . .
+        . . . b b 8 1 1 1 1 1 1 1 . . .
         . . . . . b 1 1 1 1 1 1 . . . .
         . . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . .
@@ -432,6 +432,23 @@ tiles.place_on_tile(None, tiles.get_tile_location(0, 0))
 #Make an end to level one and a beginning to level two
 def on_overlap_tile(sprite, location):
     pass
-scene.on_overlap_tile(SpriteKind.player, img(""" """), on_overlap_tile)
+scene.on_overlap_tile(SpriteKind.player, img("""
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+"""), on_overlap_tile)
 
     

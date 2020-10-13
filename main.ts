@@ -74,20 +74,20 @@ scene.setTileMap(img`
 `)
 scene.setTile(11, img`
     f f f f f f f f f f f f f f f f
-    f b b b b b f b b b b b b b b f
-    f b b b b b f f f f b b b b b f
-    f b b b b b f b b f b b b b b f
-    f f f f f f f b b f f f f f f f
-    f b b b f b b b b f b b f b b f
-    f b b b f b b b b f b b f b b f
-    f b b b f f f f f f b b f b b f
-    f b b b b b b f b b b b f f b f
-    f b b b b b b f b b b b b f b f
-    f f f f f f f f b b b b b f b f
-    f b b b b f b f b b b b b f f f
-    f b b b b f b f f f f f f f b f
-    f b b b b f b b b b b b b b b f
-    f b b b b f b b b b b b b b b f
+    f c c c c c f c c c c c c c c f
+    f c c c c c f f f f c c c c c f
+    f c c c c c f c c f c c c c c f
+    f f f f f f f c c f f f f f f f
+    f c c c f c c c c f c c f c c f
+    f c c c f c c c c f c c f c c f
+    f c c c f f f f f f c c f c c f
+    f c c c c c c f c c c c f f c f
+    f c c c c c c f c c c c c f c f
+    f f f f f f f f c c c c c f c f
+    f c c c c f c f c c c c c f f f
+    f c c c c f c f f f f f f f c f
+    f c c c c f c c c c c c c c c f
+    f c c c c f c c c c c c c c c f
     f f f f f f f f f f f f f f f f
 `, true)
 scene.setTile(6, img`
@@ -145,21 +145,21 @@ scene.setTile(14, img`
     . . . . e e e e e e e e e . . .
 `)
 scene.setTile(2, img`
-    . . 1 . . . 1 . . . 1 . . . 1 .
-    . 1 2 1 . 1 2 1 . 1 2 1 . 1 2 1
-    1 2 2 2 1 2 2 2 1 2 2 2 1 2 2 2
+    . . . . . . . . . . . . . . . .
+    . 1 1 . 1 1 . 1 1 . 1 1 . 1 1 .
+    1 2 2 1 2 2 1 2 2 1 2 2 1 2 2 1
     f f f f f f f f f f f f f f f f
-    f b b b f b b b b b f b b b b f
-    f b b b f b b b b b f b b b b f
-    f b b b f f f f f f f b b b b f
-    f b b b f b b f f b b b b b b f
-    f f f f f b b f b b b b b b b f
-    f b b f b b b f b b b b b b b f
-    f b b f b b b f f f f f f f f f
-    f b b f f f f f b f b b b b b f
-    f b b b b b b b b f b b b b b f
-    f b b b b b b b b f b b b b b f
-    f b b b b b b b b f b b b b b f
+    f c c c f c c c c c f c c c c c
+    f c c c f c c c c c f c c c c c
+    f c c c f f f f f f f f f c c c
+    f c c c f c c f f c c c f f f f
+    f f f f f c c f c c c c f c c c
+    f c c f c c c f c c c c f c c c
+    f c c f c c c f f f f f f f f f
+    f c c f f f f f c f c c c c c c
+    f c c c c c c c c f c c c c c c
+    f c c c c c c c c f c c c c c c
+    f c c c c c c c c f c c c c c c
     f f f f f f f f f f f f f f f f
 `, true)
 scene.setTile(4, img`
@@ -196,7 +196,7 @@ controller.player1.onButtonEvent(ControllerButton.A, ControllerButtonEvent.Press
         . . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . .
         . . . . . b 1 1 1 1 1 1 . . . .
-        . . . b b 2 1 1 1 1 1 1 1 . . .
+        . . . b b 8 1 1 1 1 1 1 1 . . .
         . . . . . b 1 1 1 1 1 1 . . . .
         . . . . . . . . . . . . . . . .
         . . . . . . . . . . . . . . . .
@@ -425,6 +425,23 @@ tiles.placeOnTile(yes, tiles.getTileLocation(93, 16))
 tiles.placeOnTile(null, tiles.getTileLocation(0, 0))
 // Make the minimap
 // Make an end to level one and a beginning to level two
-scene.onOverlapTile(SpriteKind.Player, img` `, function on_overlap_tile(sprite: Sprite, location: tiles.Location) {
+scene.onOverlapTile(SpriteKind.Player, img`
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+`, function on_overlap_tile(sprite: Sprite, location: tiles.Location) {
     
 })
