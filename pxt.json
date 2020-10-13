@@ -9,7 +9,9 @@
         "arcade-minimap": "github:microsoft/arcade-minimap#v0.6.1",
         "darts": "*",
         "animation": "*",
-        "storyboard": "*"
+        "storyboard": "*",
+        "controller": "*",
+        "tilemaps": "github:microsoft/pxt-tilemaps#v1.9.2"
     },
     "files": [
         "main.ts",

@@ -68,9 +68,9 @@ scene.setTileMap(img`
     b...................bb.........b.bb............b................b..b...........b..........4b.......b
     b..................bbb.........bbb....bbbbbbbb.b................b..b...bbbb....b..bbbbbbbbbbbbb....b
     b.......bbbbbbbbbbbbbb...bbbbbbbb....bb6.......b....bbbbbbbbbbbbb..b...........b..................bb
-    b......b.............bb.............b.........bbb.............................bbb................bb.
-    b....bbb.............bbb...........b...........bbb..........................bbb.bb..............bb..
-    bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb2bbbbb2b....bbbbbbb2bbbbbbbb...
+    b......bb............bb.............b.........bbb.............................bbb................bb.
+    b....bbb..............bb...........b...........bbb..........................bbb.bb..............bb..
+    bbbbbb.................bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb2bbbbb2b....bbbbbbb2bbbbbbbb...
 `)
 scene.setTile(11, img`
     f f f f f f f f f f f f f f f f
@@ -411,21 +411,39 @@ let ruby = sprites.create(img`
 let money_bag = sprites.create(img`
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
-    . . . . d d d d d d d d . . . .
-    . . . . . d d d d d d . f . . .
+    . . . . . d d d d d d . . . . .
+    . . . . d d d d d d d d f . . .
     . . . . f f f f f f f f . . . .
     . . . . . d d d d d d . f . . .
-    . . . . . d d 5 5 d d . . . . .
-    . . . . d d 5 5 5 5 d d . . . .
-    . . . . d d 5 5 5 5 d d . . . .
-    . . . d d d 5 5 5 5 d d d . . .
-    . . . d d d 5 5 5 5 d d d . . .
-    . . . d d d 5 5 5 5 d d d . . .
-    . . d d d d d 5 5 d d d d d . .
-    . . d d d d d d d d d d d d . .
-    . . . d d d d d d d d d d . . .
-    . . . . . . . . . . . . . . . .
+    . . . . . d d f f d d . . . . .
+    . . . . d d f 5 5 f d d . . . .
+    . . . d d f 5 5 5 5 f d d . . .
+    . . d d d f 5 5 5 5 f d d d . .
+    . . d d d f 5 5 5 5 f d d d . .
+    . . d d d f 5 5 5 5 f d d d . .
+    . . d d d f 5 5 5 5 f d d d . .
+    . . d d d d f 5 5 f d d d d . .
+    . . . d d d d f f d d d d . . .
+    . . . . d d d d d d d d . . . .
 `, SpriteKind.Food)
+let my_sprite = sprites.create(img`
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+`)
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function on_overlap2(sprite: Sprite, otherSprite: Sprite) {
     otherSprite.destroy()
     info.player1.changeScoreBy(1)
