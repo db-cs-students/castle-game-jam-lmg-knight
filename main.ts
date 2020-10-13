@@ -36,8 +36,8 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function jump() {
     
 })
 info.player1.setLife(1)
-game.showLongText("Just a friendly reminder that this game is still early in development! I will be constantly working on this project and trying to make it better for you. Thanks, Dev.", DialogLayout.Bottom)
-game.showLongText("You have fallen into an evil dungeon full of dangerous monsters.You must throw your swords(spacebar) and move with the arrow keys to defeat them. There are also a few treasures hidden around. Find them for the secret ending. Enjoy!", DialogLayout.Bottom)
+game.showLongText("Welcome to the crusade 1.3 update AKA rags and riches! We've added a bunch more items! Have fun, Dev", DialogLayout.Bottom)
+game.showLongText("You have fallen into an dungeon full of evilmonsters.You must throw your swords(spacebar) and move with the arrow keys to defeat them. There are also a few treasures hidden around. Find them for the secret ending. Enjoy!", DialogLayout.Bottom)
 info.setScore(0)
 // Make the level
 scene.setTileMap(img`
@@ -63,14 +63,14 @@ scene.setTileMap(img`
     b........b...........b6........b..................................bbbbbbbbbbbbb....................b
     b.........b...bbbbb..b.........bb..............................................2bbbbbbbbbbb2.......b
     b..........b.........b.........bbb.............................................b6..........bbbb....b
-    b...........b........b.........bbbb............................................b...........b.......b
-    b...........bbbbbbb..b.........bbbbb...........bbbbbb2bbbb2bbbbbb..b...........b...........b....bbbb
-    b...................bb.........bbbb............b................b..b...........b..........4b.......b
+    b...........b........b.........b.bb............................................b...........b.......b
+    b...........bbbbbbb..b.........b..bb...........bbbbbb2bbbb2bbbbbb..b...........b...........b....bbbb
+    b...................bb.........b.bb............b................b..b...........b..........4b.......b
     b..................bbb.........bbb....bbbbbbbb.b................b..b...bbbb....b..bbbbbbbbbbbbb....b
     b.......bbbbbbbbbbbbbb...bbbbbbbb....bb6.......b....bbbbbbbbbbbbb..b...........b..................bb
-    b......b.............bb.............b.........bbb.............................bbb................bbb
-    b....bbb.............bbb...........b...........bbb..........................bbbbbb..............bbbb
-    bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb2bbbbb2bbbbbbbbbbbb2bbbbbbbbbbb
+    b......b.............bb.............b.........bbb.............................bbb................bb.
+    b....bbb.............bbb...........b...........bbb..........................bbb.bb..............bb..
+    bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb2bbbbb2b....bbbbbbb2bbbbbbbb...
 `)
 scene.setTile(11, img`
     f f f f f f f f f f f f f f f f
@@ -408,6 +408,24 @@ let ruby = sprites.create(img`
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
 `, SpriteKind.Food)
+let money_bag = sprites.create(img`
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . d d d d d d d d . . . .
+    . . . . . d d d d d d . f . . .
+    . . . . f f f f f f f f . . . .
+    . . . . . d d d d d d . f . . .
+    . . . . . d d 5 5 d d . . . . .
+    . . . . d d 5 5 5 5 d d . . . .
+    . . . . d d 5 5 5 5 d d . . . .
+    . . . d d d 5 5 5 5 d d d . . .
+    . . . d d d 5 5 5 5 d d d . . .
+    . . . d d d 5 5 5 5 d d d . . .
+    . . d d d d d 5 5 d d d d d . .
+    . . d d d d d d d d d d d d . .
+    . . . d d d d d d d d d d . . .
+    . . . . . . . . . . . . . . . .
+`, SpriteKind.Food)
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Food, function on_overlap2(sprite: Sprite, otherSprite: Sprite) {
     otherSprite.destroy()
     info.player1.changeScoreBy(1)
@@ -422,7 +440,7 @@ tiles.placeOnTile(amulet, tiles.getTileLocation(1, 14))
 tiles.placeOnTile(voodoo_skull, tiles.getTileLocation(43, 6))
 tiles.placeOnTile(lost_one, tiles.getTileLocation(6, 23))
 tiles.placeOnTile(yes, tiles.getTileLocation(93, 16))
-tiles.placeOnTile(null, tiles.getTileLocation(0, 0))
+tiles.placeOnTile(money_bag, tiles.getTileLocation(4, 24))
 // Make the minimap
 // Make an end to level one and a beginning to level two
 scene.onOverlapTile(SpriteKind.Player, img`

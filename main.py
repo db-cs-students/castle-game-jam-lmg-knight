@@ -33,8 +33,8 @@ def jump():
         can_jump = Knight.is_hitting_tile(CollisionDirection.BOTTOM)
 controller.up.on_event(ControllerButtonEvent.PRESSED, jump)
 info.player1.set_life(1)
-game.show_long_text("Just a friendly reminder that this game is still early in development! I will be constantly working on this project and trying to make it better for you. Thanks, Dev.",DialogLayout.BOTTOM)
-game.show_long_text("You have fallen into an evil dungeon full of dangerous monsters.You must throw your swords(spacebar) and move with the arrow keys to defeat them. There are also a few treasures hidden around. Find them for the secret ending. Enjoy!", DialogLayout.BOTTOM)
+game.show_long_text("Welcome to the crusade 1.3 update AKA rags and riches! We've added a bunch more items! Have fun, Dev",DialogLayout.BOTTOM)
+game.show_long_text("You have fallen into an dungeon full of evilmonsters.You must throw your swords(spacebar) and move with the arrow keys to defeat them. There are also a few treasures hidden around. Find them for the secret ending. Enjoy!", DialogLayout.BOTTOM)
 info.set_score(0)
 
 #Make the level
@@ -61,14 +61,14 @@ scene.set_tile_map(img("""
     b........b...........b6........b..................................bbbbbbbbbbbbb....................b
     b.........b...bbbbb..b.........bb..............................................2bbbbbbbbbbb2.......b
     b..........b.........b.........bbb.............................................b6..........bbbb....b
-    b...........b........b.........bbbb............................................b...........b.......b
-    b...........bbbbbbb..b.........bbbbb...........bbbbbb2bbbb2bbbbbb..b...........b...........b....bbbb
-    b...................bb.........bbbb............b................b..b...........b..........4b.......b
+    b...........b........b.........b.bb............................................b...........b.......b
+    b...........bbbbbbb..b.........b..bb...........bbbbbb2bbbb2bbbbbb..b...........b...........b....bbbb
+    b...................bb.........b.bb............b................b..b...........b..........4b.......b
     b..................bbb.........bbb....bbbbbbbb.b................b..b...bbbb....b..bbbbbbbbbbbbb....b
     b.......bbbbbbbbbbbbbb...bbbbbbbb....bb6.......b....bbbbbbbbbbbbb..b...........b..................bb
-    b......b.............bb.............b.........bbb.............................bbb................bbb
-    b....bbb.............bbb...........b...........bbb..........................bbbbbb..............bbbb
-    bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb2bbbbb2bbbbbbbbbbbb2bbbbbbbbbbb
+    b......b.............bb.............b.........bbb.............................bbb................bb.
+    b....bbb.............bbb...........b...........bbb..........................bbb.bb..............bb..
+    bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb2bbbbb2b....bbbbbbb2bbbbbbbb...
 """))
 scene.set_tile(11, img("""
     f f f f f f f f f f f f f f f f
@@ -410,6 +410,24 @@ ruby = sprites.create(img("""
     . . . . . . . . . . . . . . . .
     . . . . . . . . . . . . . . . .
 """),SpriteKind.food)
+money_bag = sprites.create(img("""
+    . . . . . . . . . . . . . . . .
+    . . . . . . . . . . . . . . . .
+    . . . . d d d d d d d d . . . .
+    . . . . . d d d d d d . f . . .
+    . . . . f f f f f f f f . . . .
+    . . . . . d d d d d d . f . . .
+    . . . . . d d 5 5 d d . . . . .
+    . . . . d d 5 5 5 5 d d . . . .
+    . . . . d d 5 5 5 5 d d . . . .
+    . . . d d d 5 5 5 5 d d d . . .
+    . . . d d d 5 5 5 5 d d d . . .
+    . . . d d d 5 5 5 5 d d d . . .
+    . . d d d d d 5 5 d d d d d . .
+    . . d d d d d d d d d d d d . .
+    . . . d d d d d d d d d d . . .
+    . . . . . . . . . . . . . . . .
+"""),SpriteKind.food)
 def on_overlap2(sprite, otherSprite):
       otherSprite.destroy()
       info.player1.change_score_by(1)
@@ -425,7 +443,7 @@ tiles.place_on_tile(amulet, tiles.get_tile_location(1, 14))
 tiles.place_on_tile(voodoo_skull, tiles.get_tile_location(43, 6))
 tiles.place_on_tile(lost_one, tiles.get_tile_location(6, 23))
 tiles.place_on_tile(yes, tiles.get_tile_location(93, 16))
-tiles.place_on_tile(None, tiles.get_tile_location(0, 0))
+tiles.place_on_tile(money_bag, tiles.get_tile_location(4, 24))
 #Make the minimap
 
 
